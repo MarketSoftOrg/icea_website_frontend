@@ -1,0 +1,61 @@
+# .pre-commit-config.yaml
+
+# Pre-commit configuration format version.
+# Use a recent version like v4 for better compatibility and features.
+# See: https://pre-commit.com/#upgrading-individual-hooks
+repos:
+  # General hooks for common code style issues (e.g., whitespace, newlines).
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0 # Always use a specific tag or commit hash for stability
+    hooks:
+      - id: trailing-whitespace # Removes extraneous whitespace at line endings
+        # Exclude SVG files from this hook
+        exclude: '.*\.svg$'
+      - id: end-of-file-fixer # Ensures files end with a single newline character
+        # Exclude SVG files from this hook
+        exclude: '.*\.svg$'
+      - id: check-yaml # Checks YAML file syntax
+      - id: check-json # Checks JSON file syntax
+      - id: check-added-large-files # Prevents committing very large files
+
+  # Hook for Prettier (code formatter).
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8 # Check for latest stable version
+    hooks:
+      - id: prettier
+        # Files to format. Adjust this regex to match your project's file types.
+        files: '\.(js|jsx|ts|tsx|json|css|scss|md|html|yaml|yml)$'
+        # CRITICAL: Add '--write' to automatically fix formatting issues.
+        args: [--write]
+
+  - repo: local
+    hooks:
+      - id: eslint
+        name: ESLint (via npm run lint)
+        entry: npx eslint
+        language: system
+        files: \.(js|jsx|ts|tsx)$
+        additional_dependencies: []
+
+  # Hook for detect-secrets (IBM fork).
+  # This runs the secret scan during the commit process.
+  - repo: https://github.com/ibm/detect-secrets
+    # Using 'master' is convenient but consider a specific tag for stability (e.g., rev: v0.13.1+ibm.62.dss)
+    rev: 0.13.1+ibm.62.dss
+    hooks:
+      - id: detect-secrets # This ID runs the detect-secrets pre-commit hook
+        # Arguments for detect-secrets-hook:
+        # --baseline .secrets.baseline: Specifies the baseline file.
+        # --use-all-plugins: Uses all available detection plugins.
+        args: [--baseline, .secrets.baseline, --use-all-plugins]
+
+  # Hook for Commitizen (Conventional Commits enforcement).
+  # This hook ensures commit messages follow a consistent format.
+  # Requires Commitizen setup in your package.json.
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.2.0 # Check for latest stable version
+    hooks:
+      - id: conventional-pre-commit
+        # This hook runs during the 'commit-msg' Git stage, not 'pre-commit'.
+        stages: [commit-msg]
+        args: ['-v'] # Optional arguments, e.g., for verbose output

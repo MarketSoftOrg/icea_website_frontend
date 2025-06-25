@@ -1,0 +1,120 @@
+# .github/workflows/ci.yml
+
+name: CI - Frontend Code Quality and Build
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  build_and_quality_checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install Node.js Dependencies
+        run: npm ci
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install detect-secrets (IBM fork)
+        run: |
+          pip install --upgrade "git+https://github.com/ibm/detect-secrets.git@master#egg=detect-secrets"
+          detect-secrets --version
+
+      - name: Install jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+        shell: bash
+
+      - name: Run Detect-Secrets Scan & Audit
+        run: |
+          set -x # Keep this for verbose debugging!
+
+          # Define exclusion patterns for the scan.
+          EXCLUDE_PATTERNS='.*node_modules/.*|.*package-lock\.json|.*yarn\\.lock|.*\\.next/.*|.*build/.*|.*out/.*|.*dist/.*|.*\\.git/.*|.*\\.env.*|.*\\.prettierrc\.mjs|.*\\.prettierrc\.js|.*\\.gitleaks\\.toml|.*\\.secrets\\.baseline|.*\\.github/workflows/.*|^\\.secrets\\.baseline$|.*\.git/FETCH_HEAD$'
+
+          echo "::group::🔍 Running Initial Detect-Secrets Scan to update baseline"
+          # Run scan. This command will update the .secrets.baseline file directly.
+          # We capture its *informational* output (stderr) for logging.
+          SCAN_INFO_OUTPUT=$(detect-secrets scan --all-files --exclude-files "${EXCLUDE_PATTERNS}" --update .secrets.baseline . 2>&1)
+          echo "$SCAN_INFO_OUTPUT"
+          echo "::endgroup::"
+
+          # IMPORTANT: Read the JSON directly from the updated .secrets.baseline file
+          # This is where the actual JSON output is.
+          if [ -f .secrets.baseline ]; then # Check if the baseline file exists
+              SCAN_JSON_OUTPUT=$(cat .secrets.baseline)
+          else
+              echo "Error: .secrets.baseline file not found after scan."
+              exit 1 # Fail if the baseline file isn't created
+          fi
+
+          # Execute the audit, capture its output and exit code.
+          AUDIT_REPORT_OUTPUT=$(detect-secrets audit --report --fail-on-unaudited .secrets.baseline 2>&1)
+          AUDIT_EXIT_CODE=$? # Capture the exit code of the audit command
+
+          # Always print the raw scan output and audit report in collapsible groups for full context.
+          echo "::group::📝 Detect-Secrets Audit Report Summary"
+          echo "$AUDIT_REPORT_OUTPUT"
+          echo "::endgroup::"
+
+          # --- CRITICAL SECTION: FAIL AND SHOW SECRETS ---
+          if [ "$AUDIT_EXIT_CODE" -ne 0 ]; then
+            echo "🛑 SECRET(S) DETECTED! Pipeline step failed."
+            echo "----------------------------------------------"
+            echo "--- Identified Secret Details (File & Type) ---"
+
+            # Use jq to filter and display only the problematic secrets from the baseline file content.
+            # We already know SCAN_JSON_OUTPUT contains the baseline file's content now.
+            echo "$SCAN_JSON_OUTPUT" | jq '
+              .results |
+              to_entries |
+              map({
+                key: .key,
+                value: (.value | map(
+                           select(.is_secret == true or .is_secret == null)
+                       ))
+              }) |
+              from_entries |
+              with_entries(select(.value | length > 0)) # Only show files with actual problematic secrets
+            '
+
+            echo "----------------------------------------------"
+            echo "Please review these secrets and take action:"
+            echo " - Fix the code to remove the secret."
+            echo " - If it's a false positive, audit your .secrets.baseline or use inline allowlisting."
+            exit 1 # Explicitly fail the GitHub Actions step
+          else
+            echo "✅ No new or unaddressed secrets found."
+          fi
+        shell: bash
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Check code formatting with Prettier
+        run: npm run check-format
+
+      - name: Run SonarJS Code Quality Checks
+        run: npm run check-sonarjs
+        continue-on-error: true
+
+      - name: Run Build
+        run: npm run build
