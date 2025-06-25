@@ -1,8 +1,10 @@
+## Please read CONTRIBUTING.md if you are planning to contribute
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-First, do the install 
+First, do the install
 
 ```bash
 npm install
