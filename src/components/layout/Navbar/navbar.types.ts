@@ -10,4 +10,7 @@ export interface NavbarProps {
     text?: string;
   };
   navLinks: NavLink[];
+  // Props for color customization
+  bgColor?: string;
+  hoverColor?: string;
 }
