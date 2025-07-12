@@ -58,4 +58,4 @@ repos:
       - id: conventional-pre-commit
         # This hook runs during the 'commit-msg' Git stage, not 'pre-commit'.
         stages: [commit-msg]
-        args: ['-v'] # Optional arguments, e.g., for verbose output
+        args: ["-v"] # Optional arguments, e.g., for verbose output

@@ -1,7 +1,13 @@
-import Link from 'next/link';
-import { FooterProps } from './footer.types';
+import Link from "next/link";
+import { FooterProps } from "./footer.types";
 
-export const Footer = ({ companyName, companyDescription, linkColumns, socialLinks, copyrightText }: FooterProps) => {
+export const Footer = ({
+  companyName,
+  companyDescription,
+  linkColumns,
+  socialLinks,
+  copyrightText,
+}: FooterProps) => {
   return (
     <footer className="border-t bg-footer">
       <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
@@ -30,7 +36,10 @@ export const Footer = ({ companyName, companyDescription, linkColumns, socialLin
               <ul className="mt-6 space-y-4 text-sm">
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className="text-muted-foreground transition hover:text-foreground">
+                    <Link
+                      href={link.href}
+                      className="text-muted-foreground transition hover:text-foreground"
+                    >
                       {link.label}
                     </Link>
                   </li>
@@ -40,7 +49,9 @@ export const Footer = ({ companyName, companyDescription, linkColumns, socialLin
           ))}
         </div>
         <div className="mt-12 border-t pt-8">
-          <p className="text-center text-sm text-muted-foreground">{copyrightText}</p>
+          <p className="text-center text-sm text-muted-foreground">
+            {copyrightText}
+          </p>
         </div>
       </div>
     </footer>
