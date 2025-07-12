@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { getSucursales } from '@/lib/data';
+import { getSucursales, getValuesIcea } from '@/lib/data';
+import ValuesCard from './components/ui/ValuesCard';
 
 export const metadata: Metadata = {
   title: 'Inicio',
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const sucursales = await getSucursales();
+  const valuesicea = await getValuesIcea();
 
   return (
     <section className="flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center text-center">
@@ -44,6 +46,11 @@ export default async function HomePage() {
           ))}
         </div>
       </div>
+      <ValuesCard
+        title="Nuestros Valores"
+        subtitle="Los principios que guían cada una de nuestras acciones"
+        values={valuesicea}
+      />
     </section>
   );
 }
