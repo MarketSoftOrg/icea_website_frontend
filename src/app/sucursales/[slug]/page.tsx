@@ -1,19 +1,13 @@
-import { getSucursalBySlug } from "@/lib/data";
-import { notFound } from "next/navigation";
-import type { Metadata } from "next";
-import { SucursalPageWrapper } from "../components/SucursalPageWrapper";
+import { getSucursalBySlug } from '@/lib/data';
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import { SucursalPageWrapper } from '../components/SucursalPageWrapper';
 
 // Metadata se mantiene igual
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const sucursal = getSucursalBySlug(slug);
-  const nombre = sucursal
-    ? `Sucursal ${sucursal.nombre}`
-    : "Nuestras Sucursales";
+  const nombre = sucursal ? `Sucursal ${sucursal.nombre}` : 'Nuestras Sucursales';
 
   return {
     title: nombre,
@@ -22,11 +16,7 @@ export async function generateMetadata({
 }
 
 // Page actualizada con wrapper
-export default async function SucursalPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function SucursalPage({ params }: { params: Promise<{ slug: string }> }) {
   // 1. Obtener slug
   const { slug } = await params;
 
@@ -41,9 +31,7 @@ export default async function SucursalPage({
   // 4. USAR EL WRAPPER 👇
   return (
     <SucursalPageWrapper sucursal={sucursal}>
-      <h1 className="text-2xl font-bold mb-4">
-        Bienvenido a Template.ui - Sucursal {sucursal.nombre}
-      </h1>
+      <h1 className="text-2xl font-bold mb-4">Bienvenido a Template.ui - Sucursal {sucursal.nombre}</h1>
       <p className="mb-4">{sucursal.descripcion}</p>
       <div className="space-y-2">
         <p>
