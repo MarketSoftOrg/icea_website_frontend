@@ -1,38 +1,16 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { getSucursales } from '@/lib/data';
+import { getSucursales, getValuesIcea } from '@/lib/data';
 import ValuesCard from './components/ui/ValuesCard';
 
 export const metadata: Metadata = {
   title: 'Inicio',
 };
 
-const valuesicea = [
-  {
-    initial: 'I',
-    title: 'Innovación',
-    description: 'Buscamos constantemente nuevas formas de mejorar nuestros productos y procesos',
-  },
-  {
-    initial: 'C',
-    title: 'Calidad',
-    description: 'Mantenemos los más altos estándares en todos nuestros productos y servicios',
-  },
-  {
-    initial: 'E',
-    title: 'Excelencia',
-    description: 'Nos esforzamos por superar las expectativas en cada proyecto que emprendemos',
-  },
-  {
-    initial: 'A',
-    title: 'Alimentación',
-    description: 'Nos dedicamos a nutrir y alimentar de manera responsable y sostenible',
-  },
-];
-
 export default async function HomePage() {
   const sucursales = await getSucursales();
+  const valuesicea = await getValuesIcea();
 
   return (
     <section className="flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center text-center">
