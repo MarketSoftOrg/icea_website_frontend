@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getValuesIcea } from '@/lib/data';
 import ValuesCard from './components/ui/ValuesCard';
-import { SucursalCardContainer } from '../sucursales/components/ui/SucursalCard/SucursalCardContainer';
+import { SucursalCardContainer } from './components/ui/SucursalCard/SucursalCardContainer';
 
 export const metadata: Metadata = {
   title: 'Inicio',

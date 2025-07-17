@@ -1,4 +1,4 @@
-import { SucursalCard } from '../SucursalCard/SucursalCard';
+import { SucursalCard } from './SucursalCard';
 import { Box, Text } from '@radix-ui/themes';
 import { Award, Heart, Globe } from 'lucide-react';
 import { getSucursales } from '@/lib/data';
