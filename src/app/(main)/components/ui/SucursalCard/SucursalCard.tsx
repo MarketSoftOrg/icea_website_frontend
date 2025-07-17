@@ -52,8 +52,7 @@ export function SucursalCard({
 
       <Link href={link} passHref>
         <Button
-          size="3"
-          className={`mt-4 mx-auto px-20 py-2 rounded-md transition-colors duration-200 hover:shadow-md ${buttonClassName}`}
+          className={`mt-4 mx-auto px-10 py-2 rounded-md transition-colors duration-200 hover:shadow-md ${buttonClassName}`}
         >
           Visitar Tienda
         </Button>
