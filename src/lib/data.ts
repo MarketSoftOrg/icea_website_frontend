@@ -124,6 +124,31 @@ const sucursalesData: Sucursal[] = [
     hoverColor: 'oklch(0.8 0.15 130)',
   },
 ];
+
+const valuesicea = [
+  {
+    initial: 'I',
+    title: 'Innovación',
+    description: 'Buscamos constantemente nuevas formas de mejorar nuestros productos y procesos',
+  },
+  {
+    initial: 'C',
+    title: 'Calidad',
+    description: 'Mantenemos los más altos estándares en todos nuestros productos y servicios',
+  },
+  {
+    initial: 'E',
+    title: 'Excelencia',
+    description: 'Nos esforzamos por superar las expectativas en cada proyecto que emprendemos',
+  },
+  {
+    initial: 'A',
+    title: 'Alimentación',
+    description: 'Nos dedicamos a nutrir y alimentar de manera responsable y sostenible',
+  },
+];
+export const getValuesIcea = () => valuesicea;
+
 export const getSucursalBySlug = (slug: string): Sucursal | undefined => {
   const sucursal = sucursalesData.find((s) => s.slug === slug);
   return sucursal;

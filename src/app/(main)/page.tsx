@@ -1,6 +1,8 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { getValuesIcea } from '@/lib/data';
+import ValuesCard from './components/ui/ValuesCard';
 import { SucursalCardContainer } from '../sucursales/components/ui/SucursalCard/SucursalCardContainer';
 
 export const metadata: Metadata = {
@@ -8,6 +10,8 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
+  const valuesicea = await getValuesIcea();
+
   return (
     <section className="flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center text-center bg-gradient-to-b from-[#F8D8B5]/10 via-[#F8D8B5]/50 to-[#F8D8B5]">
       <h1 className="text-2xl font-extrabold tracking-tight lg:text-5xl mt-10">HOME DE ICEA</h1>
@@ -30,6 +34,11 @@ export default async function HomePage() {
       <div className="mt-10 mx-auto w-full sm:w-11/12 md:w-11/12 lg:10/12 2xl:w-3/4">
         <SucursalCardContainer />
       </div>
+      <ValuesCard
+        title="Nuestros Valores"
+        subtitle="Los principios que guían cada una de nuestras acciones"
+        values={valuesicea}
+      />
     </section>
   );
 }
