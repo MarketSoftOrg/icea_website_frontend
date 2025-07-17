@@ -5,7 +5,7 @@ import { Footer } from '@/components/layout/Footbar/Footer';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 const footerData = {
-  companyName: 'Template.ui',
+  companyName: 'Grupo ICEA',
   companyDescription: 'Un template base increíblemente flexible para tus proyectos con Next.js.',
   linkColumns: [
     {
@@ -32,9 +32,9 @@ const footerData = {
 };
 
 const logoData = {
-  src: '/globe.svg',
-  alt: 'Logo de Mi Template',
-  text: 'Template.ui',
+  src: '/logos/icea_blanco.png',
+  alt: 'Logo Grupo ICEA',
+  text: 'GRUPO ICEA',
 };
 
 const mainNavLinks: NavLink[] = [
@@ -46,12 +46,12 @@ const mainNavLinks: NavLink[] = [
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Navbar logo={logoData} navLinks={mainNavLinks} logoHref="/" />
-      <main className="flex flex-1 flex-col items-center justify-center min-h-[calc(100vh-20rem)] text-center">
-        {children}
-      </main>
+
+      <main className="flex-grow">{children}</main>
+
       <Footer {...footerData} />
-    </>
+    </div>
   );
 }
