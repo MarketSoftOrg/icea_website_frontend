@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { getValuesIcea } from '@/lib/data';
 import ValuesCard from './components/ui/ValuesCard';
 import { SucursalCardContainer } from './components/ui/SucursalCard/SucursalCardContainer';
+import MainPageContentContainer from './components/ui/MainPageContentContainer';
 
 export const metadata: Metadata = {
   title: 'Inicio',
@@ -30,15 +31,16 @@ export default async function HomePage() {
           <Link href="/contacto">Contacto</Link>
         </Button>
       </div>
-
-      <div className="mt-10 mx-auto w-full sm:w-11/12 md:w-11/12 lg:10/12 2xl:w-3/4">
+      <MainPageContentContainer>
         <SucursalCardContainer />
-      </div>
-      <ValuesCard
-        title="Nuestros Valores"
-        subtitle="Los principios que guían cada una de nuestras acciones"
-        values={valuesicea}
-      />
+      </MainPageContentContainer>
+      <MainPageContentContainer>
+        <ValuesCard
+          title="Nuestros Valores"
+          subtitle="Los principios que guían cada una de nuestras acciones"
+          values={valuesicea}
+        />
+      </MainPageContentContainer>
     </section>
   );
 }

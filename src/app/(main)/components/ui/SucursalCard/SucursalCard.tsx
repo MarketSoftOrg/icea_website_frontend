@@ -24,7 +24,7 @@ export function SucursalCard({
   imageUrl,
 }: SucursalCardProps) {
   return (
-    <Card className="border border-gray-200 rounded-md hover:shadow-xl transition-shadow duration-300 min-h-[500px] flex flex-col justify-between py-8 px-6">
+    <Card className="border border-gray-200 rounded-md hover:shadow-xl transition-shadow duration-300 min-h-[62vh] flex flex-col justify-between py-8 px-6">
       <Box className="text-center mb-4">
         <div
           className={`w-20 h-20 ${iconBgColorClass} rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden`}
