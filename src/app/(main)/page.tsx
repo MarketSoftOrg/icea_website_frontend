@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   return (
-    <section className="flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center text-center bg-[#F8D8B5]/70">
+    <section className="flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center text-center bg-gradient-to-b from-[#F8D8B5]/10 via-[#F8D8B5]/50 to-[#F8D8B5]">
       <h1 className="text-2xl font-extrabold tracking-tight lg:text-5xl mt-10">HOME DE ICEA</h1>
       <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
         Este contenido proviene de{' '}
