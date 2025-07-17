@@ -1,4 +1,3 @@
-// app/(main)/layout.tsx
 import { Navbar } from '@/components/layout/Navbar/Navbar';
 import { NavLink } from '@/components/layout/Navbar/navbar.types';
 import { Footer } from '@/components/layout/Footbar/Footer';

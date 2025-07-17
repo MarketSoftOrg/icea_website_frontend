@@ -1,11 +1,9 @@
-// src/app/sucursales/components/ui/SucursalCardContainer/SucursalCardContainer.tsx
 import { SucursalCard } from '../SucursalCard/SucursalCard';
 import { Box, Text } from '@radix-ui/themes';
 import { Award, Heart, Globe } from 'lucide-react';
-import { getSucursales } from '@/lib/data'; // Importamos la función para obtener sucursales
+import { getSucursales } from '@/lib/data';
 
 export function SucursalCardContainer() {
-  // Obtenemos los datos de las sucursales desde src/lib/data.ts
   const sucursalesData = getSucursales();
 
   return (
@@ -21,17 +19,14 @@ export function SucursalCardContainer() {
         {sucursalesData.map((sucursal) => (
           <div key={sucursal.id}>
             <SucursalCard
-              name={sucursal.nombre} // Usamos 'nombre' del archivo de datos
-              description={sucursal.cardDescription} // Usamos 'cardDescription'
-              location={sucursal.cardLocation} // Usamos 'cardLocation'
-              established={sucursal.established}
-              special={sucursal.special}
-              link={`/sucursales/${sucursal.slug}`} // Enlace dinámico a la página de detalle
+              name={sucursal.nombre}
+              description={sucursal.cardDescription}
+              location={sucursal.cardLocation}
+              link={`/sucursales/${sucursal.slug}`}
               iconBgColorClass={sucursal.iconBgColorClass}
               iconTextColorClass={sucursal.iconTextColorClass}
               buttonClassName={sucursal.buttonClassName}
               imageUrl={sucursal.imageUrl}
-              // Ya no pasamos la prop 'icon'
             />
           </div>
         ))}
@@ -43,19 +38,16 @@ export function SucursalCardContainer() {
         </Text>
 
         <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8">
-          {/* Primer elemento */}
           <div className="flex items-center justify-center gap-2 sm:w-auto w-full sm:px-0 px-4">
             <Award className="h-4 w-4 text-amber-600 flex-shrink-0" />
             <Text className="text-sm text-gray-600 whitespace-nowrap">Calidad</Text>
           </div>
 
-          {/* Segundo elemento */}
           <div className="flex items-center justify-center gap-2 sm:w-auto w-full sm:px-0 px-4">
             <Heart className="h-4 w-4 text-red-600 flex-shrink-0" />
             <Text className="text-sm text-gray-600 whitespace-nowrap">Atención Personalizada</Text>
           </div>
 
-          {/* Tercer elemento */}
           <div className="flex items-center justify-center gap-2 sm:w-auto w-full sm:px-0 px-4">
             <Globe className="h-4 w-4 text-green-600 flex-shrink-0" />
             <Text className="text-sm text-gray-600 whitespace-nowrap">Productos Locales</Text>

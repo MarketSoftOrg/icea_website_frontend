@@ -25,7 +25,6 @@ export const Footer = ({
         } as React.CSSProperties
       }
     >
-      {/* Solo modificamos este contenedor para el ancho */}
       <div className="mx-auto w-full sm:w-11/12 md:w-11/12 lg:w-10/12 2xl:w-3/4 px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-wrap justify-center sm:gap-10 lg:gap-50 text-center sm:text-left">
           <div className="sm:max-w-xs md:max-w-lg">

@@ -29,13 +29,7 @@ export function SucursalCard({
         <div
           className={`w-20 h-20 ${iconBgColorClass} rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden`}
         >
-          <Image
-            src={imageUrl}
-            alt={`Logo de ${name}`}
-            width={80}
-            height={80}
-            className="object-contain" // Asegura que la imagen se ajuste dentro del div sin recortarse
-          />
+          <Image src={imageUrl} alt={`Logo de ${name}`} width={80} height={80} className="object-contain" />
         </div>
         <h3 className={`text-lg ${iconTextColorClass}`}>
           <Text as="span" size="4" weight="bold">

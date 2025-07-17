@@ -41,7 +41,7 @@ export const Navbar = ({
   navLinks,
   bgColor,
   hoverColor,
-  textColor, // Valor por defecto
+  textColor,
   logoHref,
   hasIceaNavLink = false,
 }: NavbarProps) => {
@@ -56,7 +56,7 @@ export const Navbar = ({
     <>
       <header style={dynamicStyles} className="relative w-full border-b bg-navbar/95 backdrop-blur-sm">
         <div className="mx-auto flex h-24 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          {/* Desktop: Logo y navegación */}
+          {/* Desktop */}
           <div className="hidden items-center gap-6 md:flex">
             {logo && (
               <Link href={logoHref || defaultLogoHref} className="flex items-center space-x-2">
@@ -93,9 +93,8 @@ export const Navbar = ({
             </NavigationMenu>
           </div>
 
-          {/* Mobile: Tres columnas */}
+          {/* Mobile */}
           <div className="flex w-full items-center justify-between md:hidden">
-            {/* Menú hamburguesa */}
             <div className="flex w-14 justify-start">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -120,7 +119,6 @@ export const Navbar = ({
               </DropdownMenu>
             </div>
 
-            {/* Logo */}
             <div className="flex justify-center">
               {logo && (
                 <Link href={logoHref || defaultLogoHref} className="flex items-center space-x-2">
@@ -130,13 +128,12 @@ export const Navbar = ({
               )}
             </div>
 
-            {/* Espaciador */}
             <div className="w-14"></div>
           </div>
         </div>
       </header>
 
-      {/* Botón de WhatsApp */}
+      {/* WhatsApp */}
       <a
         href="https://wa.me/1234567890"
         target="_blank"

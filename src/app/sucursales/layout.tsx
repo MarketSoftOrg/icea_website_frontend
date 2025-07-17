@@ -7,7 +7,6 @@ const FooterSucursal = () => (
   </footer>
 );
 
-// generateMetadata debe ser async por convención de Next.js
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const sucursal = getSucursalBySlug(params.slug);
   const nombre = sucursal ? `Sucursal ${sucursal.nombre}` : 'Nuestras Sucursales';
@@ -18,11 +17,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-// Layout con depuración mejorada
 export default async function SucursalesLayout({ children }: { children: React.ReactNode; params: { slug: string } }) {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
-      {/* NO pongas container aquí */}
       {children}
       <FooterSucursal />
     </div>
