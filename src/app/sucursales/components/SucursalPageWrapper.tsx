@@ -5,7 +5,7 @@ import { Sucursal } from '@/lib/data';
 interface SucursalPageWrapperProps {
   sucursal: Sucursal;
   children: React.ReactNode;
-  currentPage?: 'inicio' | 'contacto' | 'productos' | 'acerca'; // Para marcar página activa
+  currentPage?: 'inicio' | 'contacto' | 'productos' | 'acerca';
 }
 
 export function SucursalPageWrapper({ sucursal, children }: SucursalPageWrapperProps) {

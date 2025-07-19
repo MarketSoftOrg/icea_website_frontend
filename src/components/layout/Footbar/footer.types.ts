@@ -21,4 +21,8 @@ export interface FooterProps {
   linkColumns: LinkColumn[];
   socialLinks: SocialLink[];
   copyrightText: string;
+  bgColor?: string;
+  textColor?: string;
+  linkColor?: string;
+  linkHoverColor?: string;
 }

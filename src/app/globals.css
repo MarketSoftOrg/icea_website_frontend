@@ -28,7 +28,13 @@
   --radius-xl: calc(var(--radius) + 4px);
   --color-navbar: var(--navbar-background);
   --color-footer: var(--footer-background);
+  --color-nav-link-text: var(--nav-link-text);
   --color-nav-link-hover-text: var(--nav-link-hover-text);
+  --color-footer: var(--footer-background);
+  --color-footer-text: var(--footer-text);
+  --color-footer-link: var(--footer-link);
+  --color-footer-link-hover: var(--footer-link-hover);
+  --color-footer-border: var(--footer-border);
 }
 
 :root {
@@ -51,10 +57,16 @@
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
-  /* Variables personalizadas */
-  --navbar-background: oklch(0.9324 0.0345 191.65);
-  --footer-background: oklch(0.968 0.007 247.896);
-  --nav-link-hover-text: oklch(0.5941 0.0765 201.18);
+
+  --navbar-background: oklch(0.18 0.05 260); /* #062B49 - Azul oscuro (100% opaco) */
+  --nav-link-text: oklch(0.95 0.01 0); /* #F2F2F2 - Gris claro (100% opaco) */
+  --nav-link-hover-text: oklch(0.89 0.07 70); /* #F8D8B5 - Beige claro (100% opaco) */
+
+  --footer-background: oklch(0.2 0 0); /* #292929 - Gris oscuro */
+  --footer-text: oklch(0.84 0 0); /* #CDCDCD - Gris claro (90% opaco) */
+  --footer-link: oklch(0.55 0.15 250); /* Azul medio claro - similar a #4F8BF5 */
+  --footer-link-hover: oklch(0.45 0.2 250); /* Azul más fuerte - similar a #2A6FDB */
+  --footer-border: oklch(0.3 0 0);
 }
 
 @layer base {

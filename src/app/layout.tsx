@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -16,7 +15,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // Asegúrate de que no haya espacios o saltos de línea entre <html> y <body>
     <html lang="es">
       <body className={inter.className}>{children}</body>
     </html>
