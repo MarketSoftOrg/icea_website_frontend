@@ -174,7 +174,26 @@ const valuesicea = [
     description: 'Nos dedicamos a nutrir y alimentar de manera responsable y sostenible',
   },
 ];
+
+const companies = [
+  'Carnes Normandía',
+  'Distribuidora ICEA',
+  'Alimentos Frescos del Pacífico',
+  'Servicios Alimentarios Integrales',
+];
+
+const iceastats = [
+  { number: '25+', label: 'Años de Experiencia' },
+  { number: '50+', label: 'Empleados' },
+  { number: '10+', label: 'Ciudades' },
+  { number: '1000+', label: 'Clientes Satisfechos' },
+];
+
+export const getIceaStats = () => iceastats;
+
 export const getValuesIcea = () => valuesicea;
+
+export const getCompanies = () => companies;
 
 export const getSucursalBySlug = (slug: string): Sucursal | undefined => {
   const sucursal = sucursalesData.find((s) => s.slug === slug);
