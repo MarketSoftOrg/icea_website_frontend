@@ -46,7 +46,7 @@ const mainNavLinks: NavLink[] = [
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar logo={logoData} navLinks={mainNavLinks} logoHref="/" />
+      <Navbar logo={logoData} navLinks={mainNavLinks} logoHref="/" hasWhatsApp={false} />
 
       <main className="flex-grow">{children}</main>
 
