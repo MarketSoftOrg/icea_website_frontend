@@ -15,7 +15,10 @@ type AboutICEAProps = {
 
 export default function AboutICEA({ title, description, stats, companies }: AboutICEAProps) {
   return (
-    <div className=" w-full sm:w-11/12 md:w-11/12 lg:w-10/12 2xl:w-3/4 py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#062B49] to-[#084272] rounded-2xl">
+    <div
+      className=" w-full sm:w-11/12 md:w-11/12 lg:w-10/12 2xl:w-3/4 py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#062B49] to-[#084272] rounded-2xl"
+      id="sobre-nosotros"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Columna sobre ICEA */}
