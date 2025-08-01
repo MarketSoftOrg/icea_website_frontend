@@ -24,7 +24,6 @@ const footerData = {
     { href: 'https://instagram.com', icon: <Instagram className="h-6 w-6" /> },
     { href: 'https://twitter.com', icon: <Twitter className="h-6 w-6" /> },
   ],
-  copyrightText: `© ${new Date().getFullYear()} Template.ui. Todos los derechos reservados.`,
 };
 
 const logoData = {

@@ -20,7 +20,6 @@ export interface FooterProps {
   companyDescription: string;
   linkColumns: LinkColumn[];
   socialLinks: SocialLink[];
-  copyrightText: string;
   bgColor?: string;
   textColor?: string;
   linkColor?: string;

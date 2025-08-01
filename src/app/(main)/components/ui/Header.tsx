@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Header() {
   return (
-    <div className="text-center mb-12 mt-12">
+    <div className="text-center mb-12 mt-12 p-5">
       <div className="flex justify-center mb-6">
         <div className="w-24 h-24 bg-black rounded-full flex items-center justify-center overflow-hidden">
           <Image

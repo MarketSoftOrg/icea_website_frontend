@@ -1,12 +1,6 @@
 import { getSucursalBySlug } from '@/lib/data';
 import type { Metadata } from 'next';
 
-const FooterSucursal = () => (
-  <footer className="w-full bg-blue-950 text-white p-4 text-center text-sm">
-    <p>© {new Date().getFullYear()} Sucursales Template.ui - Todos los derechos reservados.</p>
-  </footer>
-);
-
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const sucursal = getSucursalBySlug(params.slug);
   const nombre = sucursal ? `Sucursal ${sucursal.nombre}` : 'Nuestras Sucursales';
@@ -18,10 +12,5 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default async function SucursalesLayout({ children }: { children: React.ReactNode; params: { slug: string } }) {
-  return (
-    <div className="bg-gray-100 min-h-screen flex flex-col">
-      {children}
-      <FooterSucursal />
-    </div>
-  );
+  return <div className="bg-gray-100 min-h-screen flex flex-col">{children}</div>;
 }
