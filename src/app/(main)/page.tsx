@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getValuesIcea } from '@/lib/data';
 import ValuesCard from './components/ui/ValuesCard';
+import MisionVisionCard from './components/ui/MisionVisionCard';
 import { SucursalCardContainer } from './components/ui/SucursalCard/SucursalCardContainer';
 import MainPageContentContainer from './components/ui/MainPageContentContainer';
 
@@ -33,6 +34,9 @@ export default async function HomePage() {
       </div>
       <MainPageContentContainer>
         <SucursalCardContainer />
+      </MainPageContentContainer>
+      <MainPageContentContainer>
+        <MisionVisionCard />
       </MainPageContentContainer>
       <MainPageContentContainer>
         <ValuesCard
