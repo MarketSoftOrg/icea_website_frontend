@@ -36,7 +36,7 @@ const sucursalesData: Sucursal[] = [
     cardDescription:
       '¡El Origen de los buenos momentos! Fusionamos la tradición carnicera que nos heredaron nuestras familias con el concepto mini-super, ofreciendo una experiencia única, moderna y de gran calidad.',
     cardLocation: ' Av. Valdepeñas #8486, Real de Valdepeñas, Zapopan.',
-    imageUrl: '/logos/origen_color.png',
+    imageUrl: '/logos/origen_blanco.png',
     iconBgColorClass: 'bg-black',
     iconTextColorClass: 'text-blue-700',
     buttonClassName: 'bg-blue-600 text-white hover:bg-blue-700',
@@ -57,7 +57,7 @@ const sucursalesData: Sucursal[] = [
     cardDescription:
       '¡El Origen de los buenos momentos! Fusionamos la tradición carnicera que nos heredaron nuestras familias con el concepto mini-super, ofreciendo una experiencia única, moderna y de gran calidad.',
     cardLocation: 'Base Aérea: Av. Base Aérea #1754, El Triángulo, Zapopan.',
-    imageUrl: '/logos/origen_color.png',
+    imageUrl: '/logos/origen_blanco.png',
     iconBgColorClass: 'bg-black',
     iconTextColorClass: 'text-blue-700',
     buttonClassName: 'bg-blue-600 text-white hover:bg-blue-700',
@@ -78,7 +78,7 @@ const sucursalesData: Sucursal[] = [
     cardDescription:
       '¡El Origen de los buenos momentos! Fusionamos la tradición carnicera que nos heredaron nuestras familias con el concepto mini-super, ofreciendo una experiencia única, moderna y de gran calidad.',
     cardLocation: 'Río Nilo: Av. Rio Nilo #3566, Jardin de los historiadores, Guadalajara.',
-    imageUrl: '/logos/origen_color.png',
+    imageUrl: '/logos/origen_blanco.png',
     iconBgColorClass: 'bg-black',
     iconTextColorClass: 'text-blue-700',
     buttonClassName: 'bg-blue-600 text-white hover:bg-blue-700',
@@ -99,7 +99,7 @@ const sucursalesData: Sucursal[] = [
     cardDescription:
       '¡Desde el campo hasta tu mesa! Nos especializamos en ofrecer productos cárnicos frescos, cuidadosamente seleccionados. Nuestro objetivo es entregarte calidad cuidando tu economía familiar. ',
     cardLocation: 'C. Venustiano Carranza #206, El Mirador, Tonalá.',
-    imageUrl: '/logos/delcampo_color.svg',
+    imageUrl: '/logos/delcampo_blanco.png',
     iconBgColorClass: 'bg-black',
     iconTextColorClass: 'text-red-700',
     buttonClassName: 'bg-red-600 text-white hover:bg-red-700',
@@ -120,7 +120,7 @@ const sucursalesData: Sucursal[] = [
     cardDescription:
       ' ¡Pura calidad Tonalteca! 8 años siendo orgullosamente la carnicería de confianza de cientos de familias. .',
     cardLocation: 'C. Zaragoza #430, Tonalá Centro, Tonalá.',
-    imageUrl: '/logos/tonala_color.png',
+    imageUrl: '/logos/tonala_blanco.png',
     iconBgColorClass: 'bg-black',
     iconTextColorClass: 'text-red-700',
     buttonClassName: 'bg-red-600 text-white hover:bg-red-700',
@@ -141,7 +141,7 @@ const sucursalesData: Sucursal[] = [
     cardDescription:
       '¡Más que una carnicería! Un espacio práctico donde podrás encontrar los mejores cortes, y una gran diversidad productos seleccionados para tu despensa.  Un negocio familiar, construido para las familias. ',
     cardLocation: 'Av. Presa de Osorio #3212, Agustín Yáñez, Guadalajara.',
-    imageUrl: '/logos/normandia_color.png',
+    imageUrl: '/logos/normandia_blanco.png',
     iconBgColorClass: 'bg-black',
     iconTextColorClass: 'text-red-700',
     buttonClassName: 'bg-red-600 text-white hover:bg-red-700',
@@ -174,7 +174,42 @@ const valuesicea = [
     description: 'Nos dedicamos a nutrir y alimentar de manera responsable y sostenible',
   },
 ];
+
+const companies = [
+  'Carnes Normandía',
+  'Distribuidora ICEA',
+  'Alimentos Frescos del Pacífico',
+  'Servicios Alimentarios Integrales',
+];
+
+const iceastats = [
+  { number: '25+', label: 'Años de Experiencia' },
+  { number: '50+', label: 'Empleados' },
+  { number: '10+', label: 'Ciudades' },
+  { number: '1000+', label: 'Clientes Satisfechos' },
+];
+
+const iceaCompanyInfo = {
+  name: 'Grupo ICEA',
+  email: 'contacto@grupoincea.com',
+  phone: '(33) 1234-5678',
+  address: 'Guadalajara, Jalisco, México',
+  // Opcionales:
+  privacyEmail: 'privacidad@grupoincea.com',
+  industry: 'la industria alimentaria',
+  jurisdiction: 'Guadalajara, Jalisco, México',
+  Facebook: 'https://www.facebook.com/grupoincea',
+  Instagram: 'https://www.instagram.com/grupoincea',
+  whatsapp: 'https://wa.me/5213312345678',
+};
+
+export const getIceaStats = () => iceastats;
+
 export const getValuesIcea = () => valuesicea;
+
+export const getCompanies = () => companies;
+
+export const getIceaCompanyInfo = () => iceaCompanyInfo;
 
 export const getSucursalBySlug = (slug: string): Sucursal | undefined => {
   const sucursal = sucursalesData.find((s) => s.slug === slug);

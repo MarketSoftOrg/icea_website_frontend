@@ -5,14 +5,11 @@ import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 const footerData = {
   companyName: 'Grupo ICEA',
-  companyDescription: 'Un template base increíblemente flexible para tus proyectos con Next.js.',
+  companyDescription: 'Un grupo comprometido con la calidad y la innovación en la industria alimentaria.',
   linkColumns: [
     {
       title: 'Recursos',
-      links: [
-        { href: '/contacto', label: 'Contacto' },
-        { href: '/faq', label: 'FAQ' },
-      ],
+      links: [{ href: '/quejas-sugerencias', label: 'Quejas y Sugerencias ' }],
     },
     {
       title: 'Legal',
@@ -38,15 +35,15 @@ const logoData = {
 
 const mainNavLinks: NavLink[] = [
   { href: '/', label: 'Inicio' },
-  { href: '/acerca-de', label: 'Acerca de' },
-  { href: '/servicios', label: 'Servicios' },
-  { href: '/contacto', label: 'Contacto' },
+  { href: '/#sucursales', label: 'Sucursales' },
+  { href: '/#contacto', label: 'Contacto' },
+  { href: '/#sobre-nosotros', label: 'Sobre Nosotros' },
 ];
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar logo={logoData} navLinks={mainNavLinks} logoHref="/" />
+      <Navbar logo={logoData} navLinks={mainNavLinks} logoHref="/" hasWhatsApp={false} />
 
       <main className="flex-grow">{children}</main>
 
