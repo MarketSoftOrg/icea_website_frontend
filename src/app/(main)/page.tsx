@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ValuesCard from './components/ui/ValuesCard';
+import MisionVisionCard from './components/ui/MisionVisionCard';
 import { SucursalCardContainer } from './components/ui/SucursalCard/SucursalCardContainer';
 import MainPageContentContainer from './components/ui/MainPageContentContainer';
 import AboutICEA from './components/ui/AboutUs';
@@ -21,6 +22,9 @@ export default async function HomePage() {
     <section className="flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center text-center bg-gradient-to-b from-[#F8D8B5]/10 via-[#F8D8B5]/50 to-[#F8D8B5]">
       <Header />
 
+      <MainPageContentContainer>
+        <MisionVisionCard />
+      </MainPageContentContainer>
       <MainPageContentContainer>
         <ValuesCard
           title="Nuestros Valores"
