@@ -48,12 +48,12 @@ export const Footer = ({
           {linkColumns.map((column) => (
             <div key={column.title}>
               <p className="font-medium text-[var(--footer-text)]">{column.title}</p>
-              <ul className="mt-6 space-y-4 text-sm">
+              <ul className="mt-6 space-y-4 text-sm ">
                 {column.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-[var(--footer-link)] hover:text-[var(--footer-link-hover)] transition-colors"
+                      className="text-[var(--footer-link)] hover:text-[var(--footer-link-hover)] transition-colors mr-2"
                     >
                       {link.label}
                     </Link>
