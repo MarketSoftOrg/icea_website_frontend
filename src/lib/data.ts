@@ -201,13 +201,13 @@ const sucursalesData: Sucursal[] = [
     facebookUrl: 'https://www.facebook.com/',
     whatsappUrl: 'https://wa.me',
     //pendientes reemplzar por los colores de la sucursal
-    navbarBgColor: '#F9E473',
-    navbarHoverColor: '#292929',
-    navbarTextColor: '#696464',
+    navbarBgColor: '#292929',
+    navbarHoverColor: '#547D02',
+    navbarTextColor: '#F9E473',
     footerBgColor: '#292929',
     footerTextColor: '#F8D8B5',
-    footerLinkColor: '#F9E473',
-    footerLinkHoverColor: '#F9943B',
+    footerLinkColor: '#F9943B',
+    footerLinkHoverColor: '#547D02',
   },
 ];
 
