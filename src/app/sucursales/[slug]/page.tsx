@@ -25,7 +25,7 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
 
   return (
     <SucursalPageWrapper sucursal={sucursal}>
-      <h1 className="text-2xl font-bold mb-4">Bienvenido a Template.ui - Sucursal {sucursal.nombre}</h1>
+      <h1 className="text-2xl font-bold mb-4">Bienvenido a Sucursal {sucursal.nombre}</h1>
       <p className="mb-4">{sucursal.descripcion}</p>
       <div className="space-y-2">
         <p>

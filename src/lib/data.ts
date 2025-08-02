@@ -10,6 +10,7 @@ export interface Sucursal {
   cardDescription: string;
   cardLocation: string;
   imageUrl: string;
+  imageUrlColor: string;
   iconBgColorClass: string;
   iconTextColorClass: string;
   buttonClassName: string;
@@ -19,6 +20,15 @@ export interface Sucursal {
 
   bgColor?: string;
   hoverColor?: string;
+
+  navbarBgColor: string;
+  navbarHoverColor: string;
+  navbarTextColor: string;
+
+  footerBgColor: string;
+  footerTextColor: string;
+  footerLinkColor: string;
+  footerLinkHoverColor: string;
 }
 
 // PENDING: add facebook and whatsapp urls to Sucursal interface
@@ -37,13 +47,21 @@ const sucursalesData: Sucursal[] = [
       '¡El Origen de los buenos momentos! Fusionamos la tradición carnicera que nos heredaron nuestras familias con el concepto mini-super, ofreciendo una experiencia única, moderna y de gran calidad.',
     cardLocation: ' Av. Valdepeñas #8486, Real de Valdepeñas, Zapopan.',
     imageUrl: '/logos/origen_blanco.png',
+    imageUrlColor: '/logos/origen_color.png',
     iconBgColorClass: 'bg-black',
-    iconTextColorClass: 'text-blue-700',
-    buttonClassName: 'bg-blue-600 text-white hover:bg-blue-700',
+    iconTextColorClass: 'text-red-800',
+    buttonClassName: 'bg-[#F9943B] text-white hover:bg-[#E5832A]',
     bgColor: 'oklch(0.35 0.15 25)',
     hoverColor: 'oklch(0.85 0.10 90)',
     facebookUrl: 'https://www.facebook.com/',
     whatsappUrl: 'https://wa.me',
+    navbarBgColor: '#292929',
+    navbarHoverColor: '#df0000',
+    navbarTextColor: '#F8D8B5',
+    footerBgColor: '#292929',
+    footerTextColor: '#F8D8B5',
+    footerLinkColor: '#F9943B',
+    footerLinkHoverColor: '#F8D8B5',
   },
   {
     id: 2,
@@ -58,13 +76,21 @@ const sucursalesData: Sucursal[] = [
       '¡El Origen de los buenos momentos! Fusionamos la tradición carnicera que nos heredaron nuestras familias con el concepto mini-super, ofreciendo una experiencia única, moderna y de gran calidad.',
     cardLocation: 'Base Aérea: Av. Base Aérea #1754, El Triángulo, Zapopan.',
     imageUrl: '/logos/origen_blanco.png',
+    imageUrlColor: '/logos/origen_color.png',
     iconBgColorClass: 'bg-black',
-    iconTextColorClass: 'text-blue-700',
-    buttonClassName: 'bg-blue-600 text-white hover:bg-blue-700',
+    iconTextColorClass: 'text-red-800',
+    buttonClassName: 'bg-[#F9943B] text-white hover:bg-[#E5832A]',
     bgColor: 'oklch(0.35 0.15 25)',
     hoverColor: 'oklch(0.85 0.10 90)',
     facebookUrl: 'https://www.facebook.com/',
     whatsappUrl: 'https://wa.me',
+    navbarBgColor: '#292929',
+    navbarHoverColor: '#df0000',
+    navbarTextColor: '#F8D8B5',
+    footerBgColor: '#292929',
+    footerTextColor: '#F8D8B5',
+    footerLinkColor: '#F9943B',
+    footerLinkHoverColor: '#F8D8B5',
   },
   {
     id: 3,
@@ -79,13 +105,21 @@ const sucursalesData: Sucursal[] = [
       '¡El Origen de los buenos momentos! Fusionamos la tradición carnicera que nos heredaron nuestras familias con el concepto mini-super, ofreciendo una experiencia única, moderna y de gran calidad.',
     cardLocation: 'Río Nilo: Av. Rio Nilo #3566, Jardin de los historiadores, Guadalajara.',
     imageUrl: '/logos/origen_blanco.png',
+    imageUrlColor: '/logos/origen_color.png',
     iconBgColorClass: 'bg-black',
-    iconTextColorClass: 'text-blue-700',
-    buttonClassName: 'bg-blue-600 text-white hover:bg-blue-700',
+    iconTextColorClass: 'text-red-800',
+    buttonClassName: 'bg-[#F9943B] text-white hover:bg-[#E5832A]',
     bgColor: 'oklch(0.35 0.15 25)',
     hoverColor: 'oklch(0.85 0.10 90)',
     facebookUrl: 'https://www.facebook.com/',
     whatsappUrl: 'https://wa.me',
+    navbarBgColor: '#292929',
+    navbarHoverColor: '#df0000',
+    navbarTextColor: '#F8D8B5',
+    footerBgColor: '#292929',
+    footerTextColor: '#F8D8B5',
+    footerLinkColor: '#F9943B',
+    footerLinkHoverColor: '#F8D8B5',
   },
   {
     id: 4,
@@ -100,13 +134,21 @@ const sucursalesData: Sucursal[] = [
       '¡Desde el campo hasta tu mesa! Nos especializamos en ofrecer productos cárnicos frescos, cuidadosamente seleccionados. Nuestro objetivo es entregarte calidad cuidando tu economía familiar. ',
     cardLocation: 'C. Venustiano Carranza #206, El Mirador, Tonalá.',
     imageUrl: '/logos/delcampo_blanco.png',
+    imageUrlColor: '/logos/delcampo_color.svg',
     iconBgColorClass: 'bg-black',
-    iconTextColorClass: 'text-red-700',
-    buttonClassName: 'bg-red-600 text-white hover:bg-red-700',
-    bgColor: 'oklch(0.25 0.08 265)',
+    iconTextColorClass: 'text-[#617C08]',
+    buttonClassName: 'bg-[#F9943B] text-white hover:bg-[#E5832A]',
     hoverColor: 'oklch(0.8 0.15 130)',
     facebookUrl: 'https://www.facebook.com/',
     whatsappUrl: 'https://wa.me',
+    //pendientes reemplzar por los colores de la sucursal
+    navbarBgColor: '#526906',
+    navbarHoverColor: '#292929',
+    navbarTextColor: '#F8D8B5',
+    footerBgColor: '#292929',
+    footerTextColor: '#F8D8B5',
+    footerLinkColor: '#617C08',
+    footerLinkHoverColor: '#526906',
   },
   {
     id: 5,
@@ -121,13 +163,21 @@ const sucursalesData: Sucursal[] = [
       ' ¡Pura calidad Tonalteca! 8 años siendo orgullosamente la carnicería de confianza de cientos de familias. .',
     cardLocation: 'C. Zaragoza #430, Tonalá Centro, Tonalá.',
     imageUrl: '/logos/tonala_blanco.png',
+    imageUrlColor: '/logos/tonala_color.png',
     iconBgColorClass: 'bg-black',
-    iconTextColorClass: 'text-red-700',
-    buttonClassName: 'bg-red-600 text-white hover:bg-red-700',
+    iconTextColorClass: 'text-[#292929]',
+    buttonClassName: 'bg-[#F9943B] text-white hover:bg-[#E5832A]',
     bgColor: 'oklch(0.25 0.08 265)',
     hoverColor: 'oklch(0.8 0.15 130)',
     facebookUrl: 'https://www.facebook.com/',
     whatsappUrl: 'https://wa.me',
+    navbarBgColor: '#292929',
+    navbarHoverColor: '#494949',
+    navbarTextColor: '#F8D8B5',
+    footerBgColor: '#292929',
+    footerTextColor: '#F8D8B5',
+    footerLinkColor: '#617C08',
+    footerLinkHoverColor: '#526906',
   },
   {
     id: 6,
@@ -142,13 +192,22 @@ const sucursalesData: Sucursal[] = [
       '¡Más que una carnicería! Un espacio práctico donde podrás encontrar los mejores cortes, y una gran diversidad productos seleccionados para tu despensa.  Un negocio familiar, construido para las familias. ',
     cardLocation: 'Av. Presa de Osorio #3212, Agustín Yáñez, Guadalajara.',
     imageUrl: '/logos/normandia_blanco.png',
+    imageUrlColor: '/logos/normandia_color.png',
     iconBgColorClass: 'bg-black',
-    iconTextColorClass: 'text-red-700',
-    buttonClassName: 'bg-red-600 text-white hover:bg-red-700',
+    iconTextColorClass: 'text-[#a38a17]',
+    buttonClassName: 'bg-[#F9943B] text-white hover:bg-[#E5832A]',
     bgColor: 'oklch(0.25 0.08 265)',
     hoverColor: 'oklch(0.8 0.15 130)',
     facebookUrl: 'https://www.facebook.com/',
     whatsappUrl: 'https://wa.me',
+    //pendientes reemplzar por los colores de la sucursal
+    navbarBgColor: '#292929',
+    navbarHoverColor: '#547D02',
+    navbarTextColor: '#F9E473',
+    footerBgColor: '#292929',
+    footerTextColor: '#F8D8B5',
+    footerLinkColor: '#F9943B',
+    footerLinkHoverColor: '#547D02',
   },
 ];
 
