@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ValuesCard from './components/ui/ValuesCard';
+import MisionVisionCard from './components/ui/MisionVisionCard';
 import { SucursalCardContainer } from './components/ui/SucursalCard/SucursalCardContainer';
 import MainPageContentContainer from './components/ui/MainPageContentContainer';
 import AboutICEA from './components/ui/AboutUs';
@@ -20,6 +21,10 @@ export default async function HomePage() {
   return (
     <section className="flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center text-center bg-gradient-to-b from-[#F8D8B5]/10 via-[#F8D8B5]/50 to-[#F8D8B5]">
       <Header />
+
+      <MainPageContentContainer>
+        <MisionVisionCard />
+      </MainPageContentContainer>
       <MainPageContentContainer>
         <ValuesCard
           title="Nuestros Valores"
@@ -27,18 +32,22 @@ export default async function HomePage() {
           values={valuesicea}
         />
       </MainPageContentContainer>
+
       <AboutICEA
         title="Sobre Grupo ICEA"
         description={`Grupo ICEA es una corporación mexicana fundada con el propósito de revolucionar la industria alimentaria a través de la innovación, calidad y excelencia operativa.\n\nNuestro portafolio incluye empresas líderes en diferentes segmentos del sector alimentario, desde carnicerías especializadas hasta distribución de alimentos frescos, siempre manteniendo nuestro compromiso con la calidad y la satisfacción del cliente.`}
         stats={iceastats}
         companies={companies}
       />
-      <MainPageContentContainer>
+
+      <MainPageContentContainer id="sucursales">
         <SucursalCardContainer />
       </MainPageContentContainer>
-      <MainPageContentContainer>
+
+      <MainPageContentContainer id="contacto">
         <ContactSection />
       </MainPageContentContainer>
+
       <BackToTopButton />
     </section>
   );

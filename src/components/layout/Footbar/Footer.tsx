@@ -6,7 +6,6 @@ export const Footer = ({
   companyDescription,
   linkColumns,
   socialLinks,
-  copyrightText,
   bgColor,
   textColor,
   linkColor,
@@ -49,12 +48,12 @@ export const Footer = ({
           {linkColumns.map((column) => (
             <div key={column.title}>
               <p className="font-medium text-[var(--footer-text)]">{column.title}</p>
-              <ul className="mt-6 space-y-4 text-sm">
+              <ul className="mt-6 space-y-4 text-sm ">
                 {column.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-[var(--footer-link)] hover:text-[var(--footer-link-hover)] transition-colors"
+                      className="text-[var(--footer-link)] hover:text-[var(--footer-link-hover)] transition-colors mr-2"
                     >
                       {link.label}
                     </Link>
@@ -66,7 +65,10 @@ export const Footer = ({
         </div>
 
         <div className="mt-12 border-t border-[var(--color-footer-border)] pt-8">
-          <p className="text-center text-sm opacity-80 text-[var(--footer-text)]">{copyrightText}</p>
+          <p className="text-center text-sm opacity-80 text-[var(--footer-text)]">
+            {' '}
+            `© ${new Date().getFullYear()} Todos los derechos reservados.`
+          </p>
         </div>
       </div>
     </footer>

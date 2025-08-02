@@ -31,7 +31,7 @@ export function SucursalCard({
   facebookUrl,
 }: SucursalCardProps) {
   return (
-    <Card className="border border-gray-200 rounded-md hover:shadow-xl transition-shadow duration-300 sm:min-h-[500px] xl:min-h-[650px] 2xl:min-h-[750px] flex flex-col justify-between py-8 px-6">
+    <Card className="border border-gray-200 rounded-md hover:shadow-xl transition-shadow duration-300 sm:min-h-[650px]  xl:min-h-[650px] 2xl:min-h-[620px] flex flex-col justify-between py-8 px-6">
       <Box className="text-center mb-4">
         <div
           className={`w-20 h-20 ${iconBgColorClass} rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden`}
@@ -39,7 +39,7 @@ export function SucursalCard({
           <Image src={imageUrl} alt={`Logo de ${name}`} width={80} height={80} className="object-contain" />
         </div>
         <h3 className={`text-lg ${iconTextColorClass}`}>
-          <Text as="span" size="4" weight="bold">
+          <Text as="span" size="3" className="font-extrabold">
             {name}
           </Text>
         </h3>

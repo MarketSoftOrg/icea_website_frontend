@@ -34,6 +34,7 @@ interface NavbarProps {
   textColor?: string;
   logoHref?: string;
   hasIceaNavLink?: boolean;
+  hasWhatsApp?: boolean;
 }
 
 export const Navbar = ({
@@ -44,6 +45,7 @@ export const Navbar = ({
   textColor,
   logoHref,
   hasIceaNavLink = false,
+  hasWhatsApp = true,
 }: NavbarProps) => {
   const dynamicStyles: React.CSSProperties = {
     '--navbar-background': bgColor,
@@ -134,14 +136,16 @@ export const Navbar = ({
       </header>
 
       {/* WhatsApp */}
-      <a
-        href="https://wa.me/1234567890"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed top-6 right-[5%] md:right-[10%] lg:right-[30%] z-50 flex h-12 w-12 items-center justify-center rounded-full bg-green-500 shadow-lg hover:bg-green-600 hover:scale-110"
-      >
-        <MessageCircle className="h-7 w-7 text-white" />
-      </a>
+      {hasWhatsApp && (
+        <a
+          href="https://wa.me/1234567890"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed top-6 right-[5%] md:right-[10%] lg:right-[30%] z-50 flex h-12 w-12 items-center justify-center rounded-full bg-green-500 shadow-lg hover:bg-green-600 hover:scale-110"
+        >
+          <MessageCircle className="h-7 w-7 text-white" />
+        </a>
+      )}
     </>
   );
 };
