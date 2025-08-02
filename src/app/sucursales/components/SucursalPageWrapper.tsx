@@ -10,8 +10,8 @@ interface SucursalPageWrapperProps {
 
 export function SucursalPageWrapper({ sucursal, children }: SucursalPageWrapperProps) {
   const logoData = {
-    src: '/globe.svg',
-    alt: 'Logo de Mi Template',
+    src: `${sucursal.imageUrl}`,
+    alt: 'Logo',
     text: `Sucursal ${sucursal.nombre}`,
   };
 

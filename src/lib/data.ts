@@ -16,6 +16,12 @@ export interface Sucursal {
 
   facebookUrl: string;
   whatsappUrl: string;
+  map: string;
+  fachada: string;
+  descFirstLogo: string;
+  descFirstLogotext: string;
+  descSecondLogo: string;
+  descSecondLogotext: string;
 
   bgColor?: string;
   hoverColor?: string;
@@ -44,6 +50,12 @@ const sucursalesData: Sucursal[] = [
     hoverColor: 'oklch(0.85 0.10 90)',
     facebookUrl: 'https://www.facebook.com/',
     whatsappUrl: 'https://wa.me',
+    map: '',
+    fachada: '/logos/origen_fachada.png',
+    descFirstLogo: 'Award',
+    descFirstLogotext: 'Premios Regionales de Calidad',
+    descSecondLogo: 'Users',
+    descSecondLogotext: 'Tres Generaciones',
   },
   {
     id: 2,
@@ -65,6 +77,12 @@ const sucursalesData: Sucursal[] = [
     hoverColor: 'oklch(0.85 0.10 90)',
     facebookUrl: 'https://www.facebook.com/',
     whatsappUrl: 'https://wa.me',
+    map: '',
+    fachada: '/logos/origen_fachada.png',
+    descFirstLogo: 'Award',
+    descFirstLogotext: 'Premios Regionales de Calidad',
+    descSecondLogo: 'Users',
+    descSecondLogotext: 'Tres Generaciones',
   },
   {
     id: 3,
@@ -86,6 +104,12 @@ const sucursalesData: Sucursal[] = [
     hoverColor: 'oklch(0.85 0.10 90)',
     facebookUrl: 'https://www.facebook.com/',
     whatsappUrl: 'https://wa.me',
+    map: '',
+    fachada: '/logos/origen_fachada.png',
+    descFirstLogo: 'Award',
+    descFirstLogotext: 'Premios Regionales de Calidad',
+    descSecondLogo: 'Users',
+    descSecondLogotext: 'Tres Generaciones',
   },
   {
     id: 4,
@@ -107,6 +131,12 @@ const sucursalesData: Sucursal[] = [
     hoverColor: 'oklch(0.8 0.15 130)',
     facebookUrl: 'https://www.facebook.com/',
     whatsappUrl: 'https://wa.me',
+    map: '',
+    fachada: '/logos/delcampo_fachada.png',
+    descFirstLogo: 'Award',
+    descFirstLogotext: 'Premios Regionales de Calidad',
+    descSecondLogo: 'Users',
+    descSecondLogotext: 'Tres Generaciones',
   },
   {
     id: 5,
@@ -128,6 +158,12 @@ const sucursalesData: Sucursal[] = [
     hoverColor: 'oklch(0.8 0.15 130)',
     facebookUrl: 'https://www.facebook.com/',
     whatsappUrl: 'https://wa.me',
+    map: '',
+    fachada: '/logos/tonala_fachada.png',
+    descFirstLogo: 'Award',
+    descFirstLogotext: 'Premios Regionales de Calidad',
+    descSecondLogo: 'Users',
+    descSecondLogotext: 'Tres Generaciones',
   },
   {
     id: 6,
@@ -149,6 +185,12 @@ const sucursalesData: Sucursal[] = [
     hoverColor: 'oklch(0.8 0.15 130)',
     facebookUrl: 'https://www.facebook.com/',
     whatsappUrl: 'https://wa.me',
+    map: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3733.1487729402547!2d-103.2907902!3d20.6635255!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b3949d97f79f%3A0x748ba2949f8a75ec!2sCarniceria%20Normandia!5e0!3m2!1ses!2smx!4v1754092255242!5m2!1ses!2smx',
+    fachada: '/fachadas/normandia_fachada.webp',
+    descFirstLogo: 'Award',
+    descFirstLogotext: 'Premios Regionales de Calidad',
+    descSecondLogo: 'Users',
+    descSecondLogotext: 'Tres Generaciones',
   },
 ];
 
