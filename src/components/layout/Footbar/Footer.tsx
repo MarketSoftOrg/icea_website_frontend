@@ -67,7 +67,7 @@ export const Footer = ({
         <div className="mt-12 border-t border-[var(--color-footer-border)] pt-8">
           <p className="text-center text-sm opacity-80 text-[var(--footer-text)]">
             {' '}
-            `© ${new Date().getFullYear()} Template.ui. Todos los derechos reservados.`
+            `© ${new Date().getFullYear()} Todos los derechos reservados.`
           </p>
         </div>
       </div>
