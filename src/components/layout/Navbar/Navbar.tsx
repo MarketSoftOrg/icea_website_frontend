@@ -63,7 +63,7 @@ export const Navbar = ({
             {logo && (
               <Link href={logoHref || defaultLogoHref} className="flex items-center space-x-2">
                 <Image className="mb-2" src={logo.src} alt={logo.alt} width={80} height={80} />
-                {logo.text && <span className="font-bold text-2xl text-[var(--nav-link-text)]">{logo.text}</span>}
+                {logo.text && <span className=" m-5 font-bold text-2xl text-[var(--nav-link-text)]">{logo.text}</span>}
               </Link>
             )}
             <NavigationMenu>
