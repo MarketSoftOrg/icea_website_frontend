@@ -20,16 +20,16 @@ export function SucursalCardContainer() {
           <div key={sucursal.id}>
             <SucursalCard
               name={sucursal.nombre}
-              description={sucursal.cardDescription}
-              location={sucursal.cardLocation}
+              description={sucursal.card.description}
+              location={sucursal.card.location}
               link={`/sucursales/${sucursal.slug}`}
-              iconBgColorClass={sucursal.iconBgColorClass}
-              iconTextColorClass={sucursal.iconTextColorClass}
-              buttonClassName={sucursal.buttonClassName}
-              imageUrl={sucursal.imageUrl}
+              iconBgColorClass={sucursal.card.iconBgColorClass}
+              iconTextColorClass={sucursal.card.iconTextColorClass}
+              buttonClassName={sucursal.card.buttonClassName}
+              imageUrl={sucursal.card.imageUrl}
               phoneNumber={sucursal.telefono}
-              whatsappUrl={sucursal.whatsappUrl}
-              facebookUrl={sucursal.facebookUrl}
+              whatsappUrl={sucursal.social.whatsappUrl}
+              facebookUrl={sucursal.social.facebookUrl}
             />
           </div>
         ))}

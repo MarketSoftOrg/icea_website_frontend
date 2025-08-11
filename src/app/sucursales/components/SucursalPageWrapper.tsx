@@ -23,7 +23,7 @@ export function SucursalPageWrapper({ sucursal, children }: SucursalPageWrapperP
   ];
 
   const logoData = {
-    src: sucursal.imageUrlColor,
+    src: sucursal.card.imageUrlColor,
     alt: `Logo de la sucursal ${sucursal.nombre}`,
     text: sucursal.nombre,
   };
@@ -43,8 +43,8 @@ export function SucursalPageWrapper({ sucursal, children }: SucursalPageWrapperP
   ];
 
   const socialLinks = [
-    { href: sucursal.facebookUrl, icon: <Facebook size={24} /> }, // Puedes ajustar el 'size'
-    { href: sucursal.whatsappUrl, icon: <MessageCircle size={24} /> }, // 'MessageCircle' es común para WhatsApp en Lucide
+    { href: sucursal.social.facebookUrl, icon: <Facebook size={24} /> }, // Puedes ajustar el 'size'
+    { href: sucursal.social.whatsappUrl, icon: <MessageCircle size={24} /> }, // 'MessageCircle' es común para WhatsApp en Lucide
   ];
 
   return (
@@ -52,9 +52,9 @@ export function SucursalPageWrapper({ sucursal, children }: SucursalPageWrapperP
       <Navbar
         logo={logoData}
         navLinks={navLinks}
-        bgColor={sucursal.navbarBgColor}
-        hoverColor={sucursal.navbarHoverColor}
-        textColor={sucursal.navbarTextColor}
+        bgColor={sucursal.navbar.bgColor}
+        hoverColor={sucursal.navbar.hoverColor}
+        textColor={sucursal.navbar.textColor}
         logoHref={`/sucursales/${sucursal.slug}`}
         hasIceaNavLink={true}
       />
@@ -64,10 +64,10 @@ export function SucursalPageWrapper({ sucursal, children }: SucursalPageWrapperP
         companyDescription={sucursal.descripcion}
         linkColumns={linkColumns}
         socialLinks={socialLinks}
-        bgColor={sucursal.footerBgColor}
-        textColor={sucursal.footerTextColor}
-        linkColor={sucursal.footerLinkColor}
-        linkHoverColor={sucursal.footerLinkHoverColor}
+        bgColor={sucursal.footer.bgColor}
+        textColor={sucursal.footer.textColor}
+        linkColor={sucursal.footer.linkColor}
+        linkHoverColor={sucursal.footer.linkHoverColor}
       />
     </>
   );
