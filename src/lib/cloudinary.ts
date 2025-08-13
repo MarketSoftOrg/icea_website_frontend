@@ -21,23 +21,31 @@ export async function getImagesFromFolder(folderName: string): Promise<Cloudinar
       .max_results(15)
       .execute();
 
-    // The free tier of cloudinary search API has a limit of 1000 requests per hour.
-    // If we hit the limit, we should handle it gracefully.
     if (results.rate_limit_allowed === 0) {
-      console.warn('Cloudinary search rate limit reached. Returning empty array.');
+      console.warn('⚠ Límite de peticiones de búsqueda alcanzado. Devuelvo arreglo vacío.');
       return [];
     }
 
-    return results.resources.map((resource: { secure_url: string; public_id: string }) => {
+    if (!results.resources || results.resources.length === 0) {
+      console.warn('⚠ No se encontraron imágenes para el folder:', folderName);
+      return [];
+    }
+
+    const images = results.resources.map((resource: { secure_url: string; public_id: string }) => {
       const promotionName = resource.public_id.replace(`${folderName}/`, '');
+
+      const optimizedUrl = resource.secure_url.replace('/upload/', '/upload/f_auto,q_auto,w_3000,h_1688,c_fill/');
+
       return {
-        src: resource.secure_url,
+        src: optimizedUrl,
         alt: `Promoción de ${folderName} - ${promotionName}`,
         title: `Promoción ${promotionName}`,
       };
     });
+
+    return images;
   } catch (error) {
-    console.error('Error fetching images from Cloudinary:', error);
+    console.error('❌ Error al obtener imágenes desde Cloudinary:', error);
     return [];
   }
 }

@@ -25,7 +25,9 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
-  const images = await getImagesFromFolder(sucursal.slug);
+  const folderPath = sucursal.cloudinaryFolder;
+
+  const images = await getImagesFromFolder(folderPath);
 
   return (
     <SucursalPageWrapper sucursal={sucursal}>

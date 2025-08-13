@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
@@ -27,7 +27,6 @@ export default function Carousel({ images }: CarouselProps) {
     return () => clearInterval(interval);
   }, [nextImage]);
 
-
   if (!images || images.length === 0) {
     return (
       <div className="text-center p-8">
@@ -37,8 +36,8 @@ export default function Carousel({ images }: CarouselProps) {
   }
 
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-2xl w-full max-w-4xl mx-auto my-8">
-      <div className="relative h-64 md:h-96 lg:h-[500px] w-full bg-black">
+    <div className="relative overflow-hidden rounded-lg shadow-2xl w-full max-w-6xl mx-auto my-8">
+      <div className="relative h-80 md:h-[480px] lg:h-[625px] w-full bg-black">
         {images.map((image, index) => (
           <div
             key={index}
@@ -51,17 +50,13 @@ export default function Carousel({ images }: CarouselProps) {
               alt={image.alt}
               width={1200}
               height={800}
-              className="w-full h-full object-contain bg-black"
-              priority={index === 0} // Prioritize loading the first image
+              className="w-full h-full object-cover bg-black"
+              priority={index === 0}
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-              <h3 className="text-white text-lg md:text-xl font-semibold">{image.title}</h3>
-            </div>
           </div>
         ))}
       </div>
 
-      {/* Navigation Buttons */}
       <button
         onClick={prevImage}
         className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white"
@@ -76,8 +71,6 @@ export default function Carousel({ images }: CarouselProps) {
       >
         <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
       </button>
-
-      {/* Dots Indicator */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => (
           <button
