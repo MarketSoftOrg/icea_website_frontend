@@ -32,13 +32,14 @@ export interface Sucursal {
     linkColor: string;
     linkHoverColor: string;
   };
+  cloudinaryFolder: string;
 }
 
 const sucursalesData: Sucursal[] = [
   {
     id: 1,
     nombre: 'Carnicería Origen Valdepeñas',
-    slug: 'carniceria-origen',
+    slug: 'carniceria-origen-valdepenas',
     direccion: 'Av. Patria 567, Zapopan, Jalisco',
     telefono: '33-9876-5432',
     horario: 'Lunes a Sábado de 10am a 8pm',
@@ -71,11 +72,12 @@ const sucursalesData: Sucursal[] = [
       linkColor: '#F9943B',
       linkHoverColor: '#F8D8B5',
     },
+    cloudinaryFolder: 'promociones-origen',
   },
   {
     id: 2,
     nombre: 'Carnicería Origen Base Aérea',
-    slug: 'carniceria-origen-2',
+    slug: 'carniceria-origen-base-aerea',
     direccion: 'Base Aérea: Av. Base Aérea #1754, El Triángulo, Zapopan.',
     telefono: '33-9876-5432',
     horario: 'Lunes a Sábado de 10am a 8pm',
@@ -108,11 +110,12 @@ const sucursalesData: Sucursal[] = [
       linkColor: '#F9943B',
       linkHoverColor: '#F8D8B5',
     },
+    cloudinaryFolder: 'promociones-origen',
   },
   {
     id: 3,
     nombre: 'Carnicería Origen Rio Nilo',
-    slug: 'carniceria-origen-3',
+    slug: 'carniceria-origen-rio-nilo',
     direccion: 'Río Nilo: Av. Rio Nilo #3566, Jardin de los historiadores, Guadalajara.',
     telefono: '33-9876-5432',
     horario: 'Lunes a Sábado de 10am a 8pm',
@@ -145,11 +148,12 @@ const sucursalesData: Sucursal[] = [
       linkColor: '#F9943B',
       linkHoverColor: '#F8D8B5',
     },
+    cloudinaryFolder: 'promociones-origen',
   },
   {
     id: 4,
     nombre: 'Carnicería Del Campo',
-    slug: 'carnes-del-campo',
+    slug: 'carniceria-del-campo',
     direccion: 'Av. Vallarta 123, Col. Americana, Guadalajara, Jalisco',
     telefono: '33-1234-5678',
     horario: 'Lunes a Viernes de 9am a 7pm',
@@ -181,6 +185,7 @@ const sucursalesData: Sucursal[] = [
       linkColor: '#617C08',
       linkHoverColor: '#526906',
     },
+    cloudinaryFolder: 'promociones-delcampo',
   },
   {
     id: 5,
@@ -218,11 +223,12 @@ const sucursalesData: Sucursal[] = [
       linkColor: '#617C08',
       linkHoverColor: '#526906',
     },
+    cloudinaryFolder: 'promociones-tonala',
   },
   {
     id: 6,
     nombre: 'Carnes Normandia',
-    slug: 'carnes-normandia',
+    slug: 'carnices-normandia',
     direccion: 'Av. Vallarta 123, Col. Americana, Guadalajara, Jalisco',
     telefono: '33-1234-5678',
     horario: 'Lunes a Viernes de 9am a 7pm',
@@ -255,6 +261,7 @@ const sucursalesData: Sucursal[] = [
       linkColor: '#F9943B',
       linkHoverColor: '#547D02',
     },
+    cloudinaryFolder: 'promociones-normandia',
   },
 ];
 
