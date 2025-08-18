@@ -20,6 +20,10 @@ export function SucursalPageWrapper({ sucursal, children }: SucursalPageWrapperP
       href: `/sucursales/${sucursal.slug}/contacto`,
       label: 'Contacto',
     },
+    {
+      href: `/sucursales/${sucursal.slug}/bolsa-trabajo`,
+      label: 'Bolsa de Trabajo',
+    },
   ];
 
   const logoData = {
