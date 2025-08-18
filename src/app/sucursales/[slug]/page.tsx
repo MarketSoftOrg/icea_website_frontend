@@ -2,6 +2,8 @@ import { getSucursalBySlug } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { SucursalPageWrapper } from '../components/SucursalPageWrapper';
+import Carousel from '../components/ui/Carousel';
+import { getImagesFromFolder } from '@/lib/cloudinary';
 import MainPageContentContainer from '@/app/(main)/components/ui/MainPageContentContainer';
 import MapAndDesc from '@/app/(main)/components/ui/MapAndDescCard';
 import { Clock } from 'lucide-react';
@@ -25,11 +27,13 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
+  const folderPath = sucursal.cloudinaryFolder;
+
+  const images = await getImagesFromFolder(folderPath);
+
   return (
     <SucursalPageWrapper sucursal={sucursal}>
-      <h1 className="text-4xl font-extrabold text-neutral-800 pb-1 tracking-tight text-center text-shadow-lg">
-        {sucursal.nombre}
-      </h1>
+      <Carousel images={images} />
       <MainPageContentContainer>
         <MapAndDesc
           imageSrc={sucursal.fachada}
