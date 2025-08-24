@@ -59,7 +59,7 @@ export const Navbar = ({
       <header style={dynamicStyles} className="relative w-full border-b bg-navbar/95 backdrop-blur-sm">
         <div className="mx-auto flex h-24 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Desktop */}
-          <div className="hidden items-center gap-6 md:flex">
+          <div className="hidden items-center gap-6 lg:flex">
             {logo && (
               <Link href={logoHref || defaultLogoHref} className="flex items-center space-x-2">
                 <Image className="mb-2" src={logo.src} alt={logo.alt} width={80} height={80} />
@@ -94,9 +94,8 @@ export const Navbar = ({
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-
           {/* Mobile */}
-          <div className="flex w-full items-center justify-between md:hidden">
+          <div className="flex w-full items-center justify-between lg:hidden">
             <div className="flex w-14 justify-start">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -120,7 +119,6 @@ export const Navbar = ({
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
-
             <div className="flex justify-center">
               {logo && (
                 <Link href={logoHref || defaultLogoHref} className="flex items-center space-x-2">
@@ -129,19 +127,33 @@ export const Navbar = ({
                 </Link>
               )}
             </div>
-
             <div className="w-14"></div>
           </div>
         </div>
       </header>
-
-      {/* WhatsApp */}
+      {/* WhatsApp Mobile */}
       {hasWhatsApp && (
         <a
           href="https://wa.me/1234567890"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed top-6 right-4 md:top-6 md:right-[calc(50%-640px+2rem)] lg:right-[calc(50%-512px+2rem)] xl:right-[calc(50%-640px+2rem)] z-50 flex h-12 w-12 items-center justify-center rounded-full bg-green-500 shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300"
+          className="fixed top-6 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-green-500 shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300 md:hidden"
+        >
+          <MessageCircle className="h-7 w-7 text-white" />
+        </a>
+      )}
+      {/* WhatsApp Desktop */}
+      {hasWhatsApp && (
+        <a
+          href="https://wa.me/1234567890"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+      fixed top-6
+      right-6 lg:right-4 2xl:right-40 /* <-- ESTA ES LA LÍNEA CLAVE */
+      z-50 hidden md:flex h-12 w-12 items-center justify-center
+      rounded-full bg-green-500 shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300
+    "
         >
           <MessageCircle className="h-7 w-7 text-white" />
         </a>
