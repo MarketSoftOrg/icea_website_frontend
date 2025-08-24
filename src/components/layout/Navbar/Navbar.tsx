@@ -135,13 +135,13 @@ export const Navbar = ({
         </div>
       </header>
 
-      {/* WhatsApp */}
+      {/* WhatsApp Flotante */}
       {hasWhatsApp && (
         <a
           href="https://wa.me/1234567890"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed top-6 right-[5%] md:right-[10%] lg:right-[30%] z-50 flex h-12 w-12 items-center justify-center rounded-full bg-green-500 shadow-lg hover:bg-green-600 hover:scale-110"
+          className="fixed top-6 right-4 md:top-6 md:right-[calc(50%-640px+2rem)] lg:right-[calc(50%-512px+2rem)] xl:right-[calc(50%-640px+2rem)] z-50 flex h-12 w-12 items-center justify-center rounded-full bg-green-500 shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300"
         >
           <MessageCircle className="h-7 w-7 text-white" />
         </a>
