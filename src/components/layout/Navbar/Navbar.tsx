@@ -135,7 +135,7 @@ export const Navbar = ({
         </div>
       </header>
 
-      {/* WhatsApp Flotante */}
+      {/* WhatsApp */}
       {hasWhatsApp && (
         <a
           href="https://wa.me/1234567890"
