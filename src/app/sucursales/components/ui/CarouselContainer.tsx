@@ -30,7 +30,7 @@ export default function CarouselContainer({
   return (
     <section
       id="home"
-      className="relative text-white py-5 md:py-5"
+      className="relative text-white py-1"
       style={{
         background: `linear-gradient(to right, ${gradientFromColor}, ${gradientToColor})`,
       }}
@@ -45,7 +45,7 @@ export default function CarouselContainer({
           <div className="flex justify-center">
             <Link
               href={buttonHref}
-              className="inline-block px-8 py-3 text-lg font-medium text-center rounded-lg transition hover:brightness-95"
+              className="inline-block px-8 py-3 mb-10 text-lg font-medium text-center rounded-lg transition hover:brightness-95"
               style={{
                 backgroundColor: buttonBgColor,
                 color: buttonTextColor,
