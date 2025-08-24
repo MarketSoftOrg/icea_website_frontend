@@ -62,7 +62,7 @@ export function SucursalPageWrapper({ sucursal, children }: SucursalPageWrapperP
         logoHref={`/sucursales/${sucursal.slug}`}
         hasIceaNavLink={true}
       />
-      <main className="container mx-auto flex-grow">{children}</main>
+      <main className="flex-grow">{children}</main>
       <Footer
         companyName={sucursal.nombre}
         companyDescription={sucursal.descripcion}
