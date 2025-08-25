@@ -94,8 +94,8 @@ const sucursalesData: Sucursal[] = [
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
     carousel: {
-      gradientFromColor: '#800000',
-      gradientToColor: '#4D0000',
+      gradientFromColor: '#E5832A',
+      gradientToColor: '#800000',
       buttonBgColor: '#FDF6E3',
       buttonTextColor: '#800000',
       titulo: 'Carnes de Calidad Premium Desde 1952',
@@ -147,8 +147,8 @@ const sucursalesData: Sucursal[] = [
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
     carousel: {
-      gradientFromColor: '#800000',
-      gradientToColor: '#4D0000',
+      gradientFromColor: '#E5832A',
+      gradientToColor: '#800000',
       buttonBgColor: '#FDF6E3',
       buttonTextColor: '#800000',
       titulo: 'Carnes de Calidad Premium Desde 1952',
@@ -200,8 +200,8 @@ const sucursalesData: Sucursal[] = [
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
     carousel: {
-      gradientFromColor: '#800000',
-      gradientToColor: '#4D0000',
+      gradientFromColor: '#E5832A',
+      gradientToColor: '#800000',
       buttonBgColor: '#FDF6E3',
       buttonTextColor: '#800000',
       titulo: 'Carnes de Calidad Premium Desde 1952',
@@ -253,7 +253,7 @@ const sucursalesData: Sucursal[] = [
     descSecondLogotext: 'Tres Generaciones',
     carousel: {
       gradientFromColor: '#617C08',
-      gradientToColor: '#3B4A05',
+      gradientToColor: '#E5832A',
       buttonBgColor: '#F3EAD3',
       buttonTextColor: '#3B4A05',
       titulo: 'Carnes de Calidad Premium Desde 1952',
@@ -306,7 +306,7 @@ const sucursalesData: Sucursal[] = [
     descSecondLogotext: 'Tres Generaciones',
     carousel: {
       gradientFromColor: '#FFB347',
-      gradientToColor: '#CC7722',
+      gradientToColor: '#E5832A',
       buttonBgColor: '#FDF6E3',
       buttonTextColor: '#4E342A',
       titulo: 'Carnes de Calidad Premium Desde 1952',
@@ -358,10 +358,10 @@ const sucursalesData: Sucursal[] = [
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
     carousel: {
-      gradientFromColor: '#FFD700',
-      gradientToColor: '#B8860B',
+      gradientFromColor: '#F9E473',
+      gradientToColor: '#E5832A',
       buttonBgColor: '#1C1C1C',
-      buttonTextColor: '#FFD700',
+      buttonTextColor: '#F9E473',
       titulo: 'Carnes de Calidad Premium Desde 1952',
       descripcion:
         'Carnicería familiar que ofrece los mejores cortes de res, cerdo, cordero y aves. De origen local, preparados por expertos y entregados frescos diariamente.',

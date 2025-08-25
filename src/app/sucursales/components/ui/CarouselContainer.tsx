@@ -32,7 +32,7 @@ export default function CarouselContainer({
       id="home"
       className="relative text-white py-1"
       style={{
-        background: `linear-gradient(to right, ${gradientFromColor}, ${gradientToColor})`,
+        background: `linear-gradient(to top, ${gradientFromColor}, ${gradientToColor})`,
       }}
     >
       <div className="w-full mb-12">
