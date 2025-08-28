@@ -33,15 +33,11 @@ export default function MainProductsContainer({ products, onViewAllProducts }: M
           </p>
         </div>
 
-        <div className="mb-6 sm:mb-8 md:mb-10">
+        <div className="mb-3 sm:mb-4 md:mb-5">
           <CategoryBar />
         </div>
 
-        <FeaturedProductsContainer
-          products={products}
-          title="Productos Destacados"
-          subtitle="Explora nuestra selección de carnes premium, cuidadosamente seleccionadas para ti"
-        />
+        <FeaturedProductsContainer products={products} />
 
         <div className="text-center">
           <button

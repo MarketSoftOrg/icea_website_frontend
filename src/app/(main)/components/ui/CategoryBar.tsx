@@ -16,7 +16,7 @@ const categories: CategoryItem[] = [
     id: 'res',
     name: 'Res',
     href: '/categoria/res',
-    icon: <Beef className="w-5 h-5 sm:w-6 sm:h-6" />,
+    icon: <Beef className="w-10 h-10 sm:w-12 sm:h-12" />,
     bgColor: 'bg-red-100',
     hoverBgColor: 'hover:bg-red-200',
   },
@@ -24,7 +24,7 @@ const categories: CategoryItem[] = [
     id: 'cerdo',
     name: 'Cerdo',
     href: '/categoria/cerdo',
-    icon: <PiggyBank className="w-5 h-5 sm:w-6 sm:h-6" />,
+    icon: <PiggyBank className="w-10 h-10 sm:w-12 sm:h-12" />,
     bgColor: 'bg-pink-100',
     hoverBgColor: 'hover:bg-pink-200',
   },
@@ -32,7 +32,7 @@ const categories: CategoryItem[] = [
     id: 'pescados-mariscos',
     name: 'Pescados y Mariscos',
     href: '/categoria/pescados-mariscos',
-    icon: <Fish className="w-5 h-5 sm:w-6 sm:h-6" />,
+    icon: <Fish className="w-10 h-10 sm:w-12 sm:h-12" />,
     bgColor: 'bg-blue-100',
     hoverBgColor: 'hover:bg-blue-200',
   },
@@ -40,7 +40,7 @@ const categories: CategoryItem[] = [
     id: 'aves',
     name: 'Aves',
     href: '/categoria/aves',
-    icon: <Bird className="w-5 h-5 sm:w-6 sm:h-6" />,
+    icon: <Bird className="w-10 h-10 sm:w-12 sm:h-12" />,
     bgColor: 'bg-yellow-100',
     hoverBgColor: 'hover:bg-yellow-200',
   },
@@ -48,7 +48,7 @@ const categories: CategoryItem[] = [
     id: 'frutas-verduras',
     name: 'Frutas y Verduras',
     href: '/categoria/frutas-verduras',
-    icon: <Apple className="w-5 h-5 sm:w-6 sm:h-6" />,
+    icon: <Apple className="w-10 h-10 sm:w-12 sm:h-12" />,
     bgColor: 'bg-green-100',
     hoverBgColor: 'hover:bg-green-200',
   },
@@ -60,9 +60,9 @@ interface CategoryIconsBarProps {
 
 export default function CategoryIconsBar({ className = '' }: CategoryIconsBarProps) {
   return (
-    <section className={`w-full py-6 sm:py-8 ${className}`}>
+    <section className={`w-full py-3 sm:py-4 ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Contenedor con scroll horizontal para móviles */}
+        {/* Contenedor con scroll horizontal*/}
         <div className="overflow-x-auto pb-4 pt-2">
           <div className="flex justify-center items-center min-w-max">
             <div className="flex space-x-3 sm:space-x-6 md:space-x-8 lg:space-x-12 px-4 py-2">
@@ -72,7 +72,7 @@ export default function CategoryIconsBar({ className = '' }: CategoryIconsBarPro
                   href={category.href}
                   className="group flex flex-col items-center justify-start transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 rounded-xl flex-shrink-0 min-h-32 sm:min-h-36 md:min-h-40"
                 >
-                  {/* Círculo del icono - Tamaño fijo con padding para el hover */}
+                  {/* Círculo del icono*/}
                   <div className="p-1 sm:p-2">
                     <div
                       className={`
@@ -89,7 +89,7 @@ export default function CategoryIconsBar({ className = '' }: CategoryIconsBarPro
                     </div>
                   </div>
 
-                  {/* Texto de la categoría - Con altura fija y multilinea */}
+                  {/* Texto de la categoría*/}
                   <div className="mt-2 sm:mt-3 w-16 sm:w-20 md:w-24 h-8 sm:h-10 md:h-12 flex items-start justify-center">
                     <span className="text-xs sm:text-sm font-medium text-gray-700 text-center leading-tight group-hover:text-gray-900 transition-colors duration-200 break-words">
                       {category.name}
