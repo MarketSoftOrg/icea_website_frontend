@@ -39,6 +39,14 @@ export interface Sucursal {
     linkHoverColor: string;
   };
   cloudinaryFolder: string;
+  carousel: {
+    gradientFromColor: string;
+    gradientToColor: string;
+    buttonBgColor: string;
+    buttonTextColor: string;
+    titulo?: string;
+    descripcion?: string;
+  };
 }
 
 const sucursalesData: Sucursal[] = [
@@ -85,6 +93,15 @@ const sucursalesData: Sucursal[] = [
     descFirstLogotext: 'Premios Regionales de Calidad',
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
+    carousel: {
+      gradientFromColor: '#E5832A',
+      gradientToColor: '#800000',
+      buttonBgColor: '#FDF6E3',
+      buttonTextColor: '#800000',
+      titulo: 'Carnes de Calidad Premium Desde 1952',
+      descripcion:
+        'Carnicería familiar que ofrece los mejores cortes de res, cerdo, cordero y aves. De origen local, preparados por expertos y entregados frescos diariamente.',
+    },
   },
   {
     id: 2,
@@ -129,6 +146,15 @@ const sucursalesData: Sucursal[] = [
     descFirstLogotext: 'Premios Regionales de Calidad',
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
+    carousel: {
+      gradientFromColor: '#E5832A',
+      gradientToColor: '#800000',
+      buttonBgColor: '#FDF6E3',
+      buttonTextColor: '#800000',
+      titulo: 'Carnes de Calidad Premium Desde 1952',
+      descripcion:
+        'Carnicería familiar que ofrece los mejores cortes de res, cerdo, cordero y aves. De origen local, preparados por expertos y entregados frescos diariamente.',
+    },
   },
   {
     id: 3,
@@ -173,6 +199,15 @@ const sucursalesData: Sucursal[] = [
     descFirstLogotext: 'Premios Regionales de Calidad',
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
+    carousel: {
+      gradientFromColor: '#E5832A',
+      gradientToColor: '#800000',
+      buttonBgColor: '#FDF6E3',
+      buttonTextColor: '#800000',
+      titulo: 'Carnes de Calidad Premium Desde 1952',
+      descripcion:
+        'Carnicería familiar que ofrece los mejores cortes de res, cerdo, cordero y aves. De origen local, preparados por expertos y entregados frescos diariamente.',
+    },
   },
   {
     id: 4,
@@ -199,8 +234,8 @@ const sucursalesData: Sucursal[] = [
       hoverColor: 'oklch(0.8 0.15 130)',
     },
     navbar: {
-      bgColor: '#526906',
-      hoverColor: '#292929',
+      bgColor: '#292929',
+      hoverColor: '#617C08',
       textColor: '#F8D8B5',
     },
     footer: {
@@ -216,6 +251,15 @@ const sucursalesData: Sucursal[] = [
     descFirstLogotext: 'Premios Regionales de Calidad',
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
+    carousel: {
+      gradientFromColor: '#617C08',
+      gradientToColor: '#E5832A',
+      buttonBgColor: '#F3EAD3',
+      buttonTextColor: '#3B4A05',
+      titulo: 'Carnes de Calidad Premium Desde 1952',
+      descripcion:
+        'Carnicería familiar que ofrece los mejores cortes de res, cerdo, cordero y aves. De origen local, preparados por expertos y entregados frescos diariamente.',
+    },
   },
   {
     id: 5,
@@ -237,14 +281,14 @@ const sucursalesData: Sucursal[] = [
       imageUrl: '/logos/tonala_blanco.png',
       imageUrlColor: '/logos/tonala_color.png',
       iconBgColorClass: 'bg-black',
-      iconTextColorClass: 'text-[#292929]',
+      iconTextColorClass: 'text-[#CC5500]',
       buttonClassName: 'bg-[#F9943B] text-white hover:bg-[#E5832A]',
       bgColor: 'oklch(0.25 0.08 265)',
       hoverColor: 'oklch(0.8 0.15 130)',
     },
     navbar: {
       bgColor: '#292929',
-      hoverColor: '#494949',
+      hoverColor: '#F9943B',
       textColor: '#F8D8B5',
     },
     footer: {
@@ -260,6 +304,15 @@ const sucursalesData: Sucursal[] = [
     descFirstLogotext: 'Premios Regionales de Calidad',
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
+    carousel: {
+      gradientFromColor: '#FFB347',
+      gradientToColor: '#E5832A',
+      buttonBgColor: '#FDF6E3',
+      buttonTextColor: '#4E342A',
+      titulo: 'Carnes de Calidad Premium Desde 1952',
+      descripcion:
+        'Carnicería familiar que ofrece los mejores cortes de res, cerdo, cordero y aves. De origen local, preparados por expertos y entregados frescos diariamente.',
+    },
   },
   {
     id: 6,
@@ -304,6 +357,15 @@ const sucursalesData: Sucursal[] = [
     descFirstLogotext: 'Premios Regionales de Calidad',
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
+    carousel: {
+      gradientFromColor: '#F9E473',
+      gradientToColor: '#E5832A',
+      buttonBgColor: '#1C1C1C',
+      buttonTextColor: '#F9E473',
+      titulo: 'Carnes de Calidad Premium Desde 1952',
+      descripcion:
+        'Carnicería familiar que ofrece los mejores cortes de res, cerdo, cordero y aves. De origen local, preparados por expertos y entregados frescos diariamente.',
+    },
   },
 ];
 
