@@ -1,4 +1,4 @@
-import { getSucursalBySlug } from '@/lib/data';
+import { getSampleProducts, getSucursalBySlug } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { SucursalPageWrapper } from '../components/SucursalPageWrapper';
@@ -7,6 +7,7 @@ import { getImagesFromFolder } from '@/lib/cloudinary';
 import MainPageContentContainer from '@/app/(main)/components/ui/MainPageContentContainer';
 import MapAndDesc from '@/app/(main)/components/ui/MapAndDescCard';
 import { Clock } from 'lucide-react';
+import MainProductsContainer from '@/app/(main)/components/ui/MainProductsContainer';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -30,6 +31,8 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
   const folderPath = sucursal.cloudinaryFolder;
 
   const images = await getImagesFromFolder(folderPath);
+
+  const sampleProducts = await getSampleProducts();
 
   return (
     <SucursalPageWrapper sucursal={sucursal}>
@@ -56,6 +59,7 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
       </div>
+      <MainProductsContainer products={sampleProducts} />
     </SucursalPageWrapper>
   );
 }

@@ -358,6 +358,60 @@ const iceaCompanyInfo = {
   whatsapp: 'https://wa.me/5213312345678',
 };
 
+const sampleProducts = [
+  {
+    id: '1',
+    title: 'Manzanas Rojas Premium',
+    description: 'Manzanas frescas y jugosas, perfectas para tu desayuno diario',
+    category: 'Frutas',
+    price: 4.99,
+    unit: 'kg',
+    oldPrice: 6.99,
+    imageUrl: '/images/manzanas.jpg',
+    promoLabel: '30% OFF',
+  },
+  {
+    id: '2',
+    title: 'Leche Entera Orgánica',
+    description: 'Leche 100% natural de vacas alimentadas con pasto orgánico',
+    category: 'Lácteos',
+    price: 3.5,
+    unit: 'litro',
+    imageUrl: '/images/leche.jpg',
+  },
+  {
+    id: '3',
+    title: 'Pan Artesanal Integral',
+    description: 'Pan recién horneado con ingredientes naturales y semillas',
+    category: 'Panadería',
+    price: 2.75,
+    unit: 'unidad',
+    oldPrice: 3.25,
+    imageUrl: '/images/pan.jpg',
+    promoLabel: 'NUEVO',
+  },
+  {
+    id: '4',
+    title: 'Tomates Cherry Orgánicos',
+    description: 'Tomates cherry dulces y frescos, cultivados sin pesticidas',
+    category: 'Verduras',
+    price: 5.2,
+    unit: 'bandeja',
+    imageUrl: '/images/tomates.jpg',
+  },
+  {
+    id: '5',
+    title: 'Yogurt Griego Natural',
+    description: 'Yogurt cremoso alto en proteínas, sin azúcares añadidos',
+    category: 'Lácteos',
+    price: 4.1,
+    unit: 'envase',
+    imageUrl: '/images/yogurt.jpg',
+  },
+];
+
+export const getSampleProducts = () => sampleProducts;
+
 export const getIceaStats = () => iceastats;
 
 export const getValuesIcea = () => valuesicea;
