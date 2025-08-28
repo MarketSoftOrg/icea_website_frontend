@@ -1,11 +1,11 @@
-import { getSucursalBySlug } from '@/lib/data';
+import { getSampleProducts, getSucursalBySlug } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { SucursalPageWrapper } from '../components/SucursalPageWrapper';
 import { getImagesFromFolder } from '@/lib/cloudinary';
 import MapAndDesc from '@/app/(main)/components/ui/MapAndDescCard';
-import { Clock } from 'lucide-react';
 import CarouselContainer from '../components/ui/CarouselContainer';
+import MainProductsContainer from '@/app/(main)/components/ui/MainProductsContainer';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -32,6 +32,8 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
 
   const carousel = sucursal.carousel;
 
+  const sampleProducts = await getSampleProducts();
+
   return (
     <SucursalPageWrapper sucursal={sucursal}>
       <CarouselContainer
@@ -52,19 +54,9 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
         sucursalId={sucursal.id}
         firstLogoText={sucursal.descFirstLogotext}
         secondLogoText={sucursal.descSecondLogotext}
+        horario={sucursal.horario}
       />
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="ml-4 md:ml-8 lg:ml-12">
-          <div className="space-y-2 mt-4">
-            <div className="flex items-center text-lg text-neutral-700">
-              <Clock className="h-5 w-5 text-orange-500 mr-2" />
-              <span>
-                <span className="font-semibold text-orange-500">Horario:</span> {sucursal.horario}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <MainProductsContainer products={sampleProducts} />
     </SucursalPageWrapper>
   );
 }
