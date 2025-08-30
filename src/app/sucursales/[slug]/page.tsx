@@ -5,6 +5,7 @@ import { SucursalPageWrapper } from '../components/SucursalPageWrapper';
 import { getImagesFromFolder } from '@/lib/cloudinary';
 import MapAndDesc from '@/app/(main)/components/ui/MapAndDescCard';
 import { Clock } from 'lucide-react';
+import Servicios from '../components/ui/Servicios';
 import CarouselContainer from '../components/ui/CarouselContainer';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -65,6 +66,7 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
       </div>
+      <Servicios />
     </SucursalPageWrapper>
   );
 }
