@@ -1,3 +1,4 @@
+// lib/cloudinary.ts
 import { v2 as cloudinary } from 'cloudinary';
 
 cloudinary.config({
@@ -15,32 +16,10 @@ interface CloudinaryResource {
   height: number;
 }
 
-interface ImageData {
-  src: string;
-  alt: string;
-  text?: string;
-  isCloudinary: boolean;
-  width?: number;
-  height?: number;
-}
-
 export interface CloudinaryImage {
   src: string;
   alt: string;
   title: string;
-}
-
-interface Product {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  price: number;
-  unit: string;
-  oldPrice?: number;
-  backendName: string;
-  promoLabel?: string;
-  imageUrl?: string;
 }
 
 export async function getImagesFromFolder(folderName: string): Promise<CloudinaryImage[]> {
@@ -61,9 +40,8 @@ export async function getImagesFromFolder(folderName: string): Promise<Cloudinar
       return [];
     }
 
-    const images = results.resources.map((resource: { secure_url: string; public_id: string }) => {
+    const images = results.resources.map((resource: CloudinaryResource) => {
       const promotionName = resource.public_id.replace(`${folderName}/`, '');
-
       const optimizedUrl = resource.secure_url.replace('/upload/', '/upload/f_auto,q_auto,w_3000,h_1688,c_fill/');
 
       return {
@@ -104,40 +82,35 @@ export async function getCloudinaryImages(
   }
 }
 
-export async function getProductsWithImages(
-  products: Product[],
-  logoData: { src: string; alt: string; text?: string },
-  folderName: string = 'productos',
-): Promise<(Product & { imageData: ImageData })[]> {
-  const cloudinaryImages = await getCloudinaryImages(folderName);
+export async function getProductImagesFromFolder(folderName: string): Promise<CloudinaryImage[]> {
+  try {
+    const { resources } = await cloudinary.search
+      .expression(`folder:${folderName}`)
+      .sort_by('public_id', 'asc')
+      .max_results(500)
+      .execute();
 
-  return products.map((product: Product) => {
-    const cloudinaryImage = cloudinaryImages[product.backendName];
-
-    let imageData: ImageData;
-
-    if (cloudinaryImage) {
-      const optimizedUrl = cloudinaryImage.secure_url.replace('/upload/', '/upload/f_auto,q_auto,w_800,h_800,c_fill/');
-
-      imageData = {
-        src: optimizedUrl,
-        alt: product.title,
-        isCloudinary: true,
-        width: cloudinaryImage.width,
-        height: cloudinaryImage.height,
-      };
-    } else {
-      imageData = {
-        src: logoData.src,
-        alt: product.title,
-        text: `Imagen no disponible para: ${product.title}`,
-        isCloudinary: false,
-      };
+    if (!resources || resources.length === 0) {
+      console.warn('⚠ No se encontraron imágenes de productos para el folder:', folderName);
+      return [];
     }
 
-    return {
-      ...product,
-      imageData,
-    };
-  });
+    const images = resources.map((resource: CloudinaryResource) => {
+      const transformations = 'c_fill,g_auto,w_600,h_600,f_auto,q_auto';
+      const optimizedUrl = resource.secure_url.replace('/upload/', `/upload/${transformations}/`);
+
+      const productName = resource.public_id.split('/').pop() || '';
+
+      return {
+        src: optimizedUrl,
+        alt: `Producto - ${productName}`,
+        title: productName,
+      };
+    });
+
+    return images;
+  } catch (error) {
+    console.error('❌ Error al obtener imágenes de productos desde Cloudinary:', error);
+    return [];
+  }
 }

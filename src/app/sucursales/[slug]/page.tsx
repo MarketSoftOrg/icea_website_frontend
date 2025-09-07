@@ -32,18 +32,11 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
 
   const carousel = sucursal.carousel;
 
-  const logoData = {
-    src: sucursal.card.imageUrlColor,
-    alt: `Logo de la sucursal ${sucursal.nombre}`,
-    text: sucursal.nombre,
-  };
-
   return (
     <SucursalPageWrapper sucursal={sucursal}>
       <CarouselContainer
         images={images}
-        buttonText="Nuestros Productos"
-        buttonHref="/productos"
+        buttonText="Algunos de Nuestros Productos"
         buttonBgColor={carousel.buttonBgColor}
         buttonTextColor={carousel.buttonTextColor}
         titulo={carousel.titulo}
@@ -58,7 +51,12 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
         secondLogoText={sucursal.descSecondLogotext}
         horario={sucursal.horario}
       />
-      <MainProductsContainer logoData={logoData} />
+      <section id="nuestros-productos">
+        <MainProductsContainer
+          sucursalProductsFolder={sucursal.cloudinaryProductsFolder}
+          sucursalWhatsappUrl={sucursal.social.whatsappUrl}
+        />
+      </section>
     </SucursalPageWrapper>
   );
 }

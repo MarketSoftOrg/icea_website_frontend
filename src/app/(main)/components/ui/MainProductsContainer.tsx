@@ -1,10 +1,14 @@
-// PremiumSelectionContainer.tsx
-
 import Link from 'next/link';
 import CategoryBar from './CategoryBar';
 import FeaturedProductsContainer from './FeaturedProductsContainer';
 
-export default function MainProductsContainer({ logoData }: { logoData: { src: string; alt: string; text?: string } }) {
+export default function MainProductsContainer({
+  sucursalProductsFolder,
+  sucursalWhatsappUrl,
+}: {
+  sucursalProductsFolder: string;
+  sucursalWhatsappUrl: string;
+}) {
   return (
     <section className="w-full bg-white py-12 sm:py-8 md:py-12 border-t-4 border-orange-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,17 +20,18 @@ export default function MainProductsContainer({ logoData }: { logoData: { src: s
             Desde res alimentada con pasto hasta aves de corral, ofrecemos solo las carnes de la más alta calidad
           </p>
         </div>
-
         <div className="mb-1 sm:mb-2 ">
           <CategoryBar />
         </div>
-        <FeaturedProductsContainer logoData={logoData} />
+        <FeaturedProductsContainer sucursalProductsFolder={sucursalProductsFolder} />
         <div className="text-center">
           <Link
-            href="/productos"
+            href={sucursalWhatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 mt-8 bg-orange-600 hover:bg-orange-700 active:bg-orange-800 text-white font-semibold rounded-lg text-base sm:text-lg transition-all duration-300 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
           >
-            Todos Los Productos
+            Pregunta por todos nuestros Productos y Precios
           </Link>
         </div>
       </div>
