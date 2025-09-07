@@ -47,7 +47,7 @@ export default function AboutICEA({ title, description, stats, companies }: Abou
             <div className="rounded-full bg-[#062B49] p-10 mb-2">
               <Building2 className="text-white" size={100} />
             </div>
-            <h2 className="text-2xl font-bold text-white mb-6">Empresas del Grupo</h2>
+            <h2 className="text-2xl font-bold text-white mb-6">Nuestras Marcas</h2>
             <ul className="space-y-4 max-w-xs w-full">
               {' '}
               {companies.map((company, idx) => (
