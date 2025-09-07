@@ -4,9 +4,9 @@ import type { Metadata } from 'next';
 import { SucursalPageWrapper } from '../components/SucursalPageWrapper';
 import { getImagesFromFolder } from '@/lib/cloudinary';
 import MapAndDesc from '@/app/(main)/components/ui/MapAndDescCard';
-import { Clock } from 'lucide-react';
 import Servicios from '../components/ui/Servicios';
 import CarouselContainer from '../components/ui/CarouselContainer';
+import MainProductsContainer from '@/app/(main)/components/ui/MainProductsContainer';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -37,10 +37,7 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
     <SucursalPageWrapper sucursal={sucursal}>
       <CarouselContainer
         images={images}
-        buttonText="Nuestros Productos"
-        buttonHref="/productos"
-        gradientFromColor={carousel.gradientFromColor}
-        gradientToColor={carousel.gradientToColor}
+        buttonText="Algunos de Nuestros Productos"
         buttonBgColor={carousel.buttonBgColor}
         buttonTextColor={carousel.buttonTextColor}
         titulo={carousel.titulo}
@@ -53,19 +50,14 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
         sucursalId={sucursal.id}
         firstLogoText={sucursal.descFirstLogotext}
         secondLogoText={sucursal.descSecondLogotext}
+        horario={sucursal.horario}
       />
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="ml-4 md:ml-8 lg:ml-12">
-          <div className="space-y-2 mt-4">
-            <div className="flex items-center text-lg text-neutral-700">
-              <Clock className="h-5 w-5 text-orange-500 mr-2" />
-              <span>
-                <span className="font-semibold text-orange-500">Horario:</span> {sucursal.horario}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <section id="nuestros-productos">
+        <MainProductsContainer
+          sucursalProductsFolder={sucursal.cloudinaryProductsFolder}
+          sucursalWhatsappUrl={sucursal.social.whatsappUrl}
+        />
+      </section>
       <Servicios />
     </SucursalPageWrapper>
   );
