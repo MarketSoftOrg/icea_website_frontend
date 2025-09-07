@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { LucideIcon, Award, Users } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
 type Props = {
   imageSrc: string;
@@ -7,6 +8,7 @@ type Props = {
   sucursalId: number;
   firstLogoText: string;
   secondLogoText: string;
+  horario?: string;
 };
 
 export default function MapAndDesc({ imageSrc, description, sucursalId, firstLogoText, secondLogoText }: Props) {
@@ -51,23 +53,32 @@ export default function MapAndDesc({ imageSrc, description, sucursalId, firstLog
     <section className="bg-[#FFFFFF] px-6 py-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 items-start md:items-center md:justify-between">
         {/* Texto y descripción */}
-        <div className="flex-1 space-y-6 w-full max-w-xl">
-          <h2 className="text-3xl font-bold text-neutral-900">Tres Generaciones de Excelencia</h2>
-          <div className="text-neutral-700 text-lg space-y-4 text-justify">{description}</div>
-          {/* Iconos */}
-          <div className="flex flex-col md:flex-row gap-6 pt-6">
-            {/* Icono 1 */}
-            <div className="flex items-center text-gray-600">
-              {Icon1 && <Icon1 className="h-10 w-10 mr-2 text-orange-400" />}
-              <p className="text-sm font-bold">{firstLogoText}</p>
-            </div>
-            {/* Icono 2 */}
-            <div className="flex items-center text-gray-600">
-              {Icon2 && <Icon2 className="h-10 w-10 mr-2 text-orange-400" />}
-              <p className="text-sm font-bold">{secondLogoText}</p>
+        <div className="flex-1 w-full max-w-xl flex flex-col justify-between">
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold text-neutral-900">Tres Generaciones de Excelencia</h2>
+            <div className="text-neutral-700 text-lg space-y-4 text-justify">{description}</div>
+            {/* Iconos */}
+            <div className="flex flex-col md:flex-row gap-6 pt-6">
+              <div className="flex items-center text-gray-600">
+                {Icon1 && <Icon1 className="h-10 w-10 mr-2 text-orange-400" />}
+                <p className="text-sm font-bold">{firstLogoText}</p>
+              </div>
+              <div className="flex items-center text-gray-600">
+                {Icon2 && <Icon2 className="h-10 w-10 mr-2 text-orange-400" />}
+                <p className="text-sm font-bold">{secondLogoText}</p>
+              </div>
             </div>
           </div>
+
+          {/* Horario (siempre alineado abajo) */}
+          <div className="flex items-center text-lg text-neutral-700 mt-10">
+            <Clock className="h-5 w-5 text-orange-500 mr-2" />
+            <span>
+              <span className="font-semibold text-orange-500">Horario:</span> {horario}
+            </span>
+          </div>
         </div>
+
         {/* Imagen y mapa */}
         <div className="flex flex-col gap-4 flex-1">
           <div className="rounded-xl overflow-hidden shadow-md">

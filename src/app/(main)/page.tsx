@@ -34,8 +34,8 @@ export default async function HomePage() {
       </MainPageContentContainer>
 
       <AboutICEA
-        title="Sobre Grupo ICEA"
-        description={`Grupo ICEA es una corporación mexicana fundada con el propósito de revolucionar la industria alimentaria a través de la innovación, calidad y excelencia operativa.\n\nNuestro portafolio incluye empresas líderes en diferentes segmentos del sector alimentario, desde carnicerías especializadas hasta distribución de alimentos frescos, siempre manteniendo nuestro compromiso con la calidad y la satisfacción del cliente.`}
+        title="¿QUIÉNES SOMOS?"
+        description={`Somos Carnes Selectas ICEA, una empresa originaria de Jalisco, México, dedicada a la comercialización de productos cárnicos de la más alta calidad. Nos destacamos por ofrecer una amplia diversidad de cortes selectos, siempre frescos y con los más altos estándares de inocuidad. Nuestro compromiso va más allá del producto: brindamos un servicio excepcional. Fusionamos tradición, sabor y excelencia para llevar a tu mesa lo mejor.`}
         stats={iceastats}
         companies={companies}
       />

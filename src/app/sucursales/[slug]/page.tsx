@@ -7,6 +7,7 @@ import MapAndDesc from '@/app/(main)/components/ui/MapAndDescCard';
 import Servicios from '../components/ui/Servicios';
 import VisitaNuestraTienda from '../components/ui/VisitaNuestraTienda';
 import CarouselContainer from '../components/ui/CarouselContainer';
+import MainProductsContainer from '@/app/(main)/components/ui/MainProductsContainer';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -37,10 +38,7 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
     <SucursalPageWrapper sucursal={sucursal}>
       <CarouselContainer
         images={images}
-        buttonText="Nuestros Productos"
-        buttonHref="/productos"
-        gradientFromColor={carousel.gradientFromColor}
-        gradientToColor={carousel.gradientToColor}
+        buttonText="Algunos de Nuestros Productos"
         buttonBgColor={carousel.buttonBgColor}
         buttonTextColor={carousel.buttonTextColor}
         titulo={carousel.titulo}
@@ -54,6 +52,12 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
         secondLogoText={sucursal.descSecondLogotext}
       />
       <VisitaNuestraTienda />
+      <section id="nuestros-productos">
+        <MainProductsContainer
+          sucursalProductsFolder={sucursal.cloudinaryProductsFolder}
+          sucursalWhatsappUrl={sucursal.social.whatsappUrl}
+        />
+      </section>
       <Servicios />
     </SucursalPageWrapper>
   );

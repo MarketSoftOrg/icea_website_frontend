@@ -7,7 +7,6 @@ import type { CloudinaryImage } from '@/lib/cloudinary';
 interface CarouselContainerProps {
   images: CloudinaryImage[];
   buttonText: string;
-  buttonHref: string;
   buttonTextColor?: string;
   buttonBgColor?: string;
   gradientFromColor?: string;
@@ -19,11 +18,10 @@ interface CarouselContainerProps {
 export default function CarouselContainer({
   images,
   buttonText,
-  buttonHref,
   buttonTextColor = '#a16207',
   buttonBgColor = '#ffffff',
-  gradientFromColor = '#facc15',
-  gradientToColor = '#d97706',
+  gradientFromColor = '#E5832A',
+  gradientToColor = '#800000',
   titulo,
   descripcion,
 }: CarouselContainerProps) {
@@ -44,7 +42,7 @@ export default function CarouselContainer({
           <p className="text-lg md:text-xl mb-8 text-amber-50">{descripcion}</p>
           <div className="flex justify-center">
             <Link
-              href={buttonHref}
+              href="#nuestros-productos"
               className="inline-block px-8 py-3 mb-10 text-lg font-medium text-center rounded-lg transition hover:brightness-95"
               style={{
                 backgroundColor: buttonBgColor,
