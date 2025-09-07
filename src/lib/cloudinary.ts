@@ -7,10 +7,40 @@ cloudinary.config({
   secure: true,
 });
 
+interface CloudinaryResource {
+  public_id: string;
+  secure_url: string;
+  format: string;
+  width: number;
+  height: number;
+}
+
+interface ImageData {
+  src: string;
+  alt: string;
+  text?: string;
+  isCloudinary: boolean;
+  width?: number;
+  height?: number;
+}
+
 export interface CloudinaryImage {
   src: string;
   alt: string;
   title: string;
+}
+
+interface Product {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  price: number;
+  unit: string;
+  oldPrice?: number;
+  backendName: string;
+  promoLabel?: string;
+  imageUrl?: string;
 }
 
 export async function getImagesFromFolder(folderName: string): Promise<CloudinaryImage[]> {
@@ -48,4 +78,66 @@ export async function getImagesFromFolder(folderName: string): Promise<Cloudinar
     console.error('❌ Error al obtener imágenes desde Cloudinary:', error);
     return [];
   }
+}
+
+export async function getCloudinaryImages(
+  folderName: string = 'productos',
+): Promise<Record<string, CloudinaryResource>> {
+  try {
+    const { resources } = await cloudinary.search
+      .expression(`folder:${folderName}`)
+      .sort_by('public_id', 'asc')
+      .max_results(500)
+      .execute();
+
+    const imageMap: Record<string, CloudinaryResource> = {};
+
+    resources?.forEach((resource: CloudinaryResource) => {
+      const publicIdName = resource.public_id.split('/').pop() || '';
+      imageMap[publicIdName] = resource;
+    });
+
+    return imageMap;
+  } catch (error) {
+    console.error('Error fetching Cloudinary images:', error);
+    return {};
+  }
+}
+
+export async function getProductsWithImages(
+  products: Product[],
+  logoData: { src: string; alt: string; text?: string },
+  folderName: string = 'productos',
+): Promise<(Product & { imageData: ImageData })[]> {
+  const cloudinaryImages = await getCloudinaryImages(folderName);
+
+  return products.map((product: Product) => {
+    const cloudinaryImage = cloudinaryImages[product.backendName];
+
+    let imageData: ImageData;
+
+    if (cloudinaryImage) {
+      const optimizedUrl = cloudinaryImage.secure_url.replace('/upload/', '/upload/f_auto,q_auto,w_800,h_800,c_fill/');
+
+      imageData = {
+        src: optimizedUrl,
+        alt: product.title,
+        isCloudinary: true,
+        width: cloudinaryImage.width,
+        height: cloudinaryImage.height,
+      };
+    } else {
+      imageData = {
+        src: logoData.src,
+        alt: product.title,
+        text: `Imagen no disponible para: ${product.title}`,
+        isCloudinary: false,
+      };
+    }
+
+    return {
+      ...product,
+      imageData,
+    };
+  });
 }

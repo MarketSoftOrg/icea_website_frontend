@@ -22,8 +22,8 @@ export default function CarouselContainer({
   buttonHref,
   buttonTextColor = '#a16207',
   buttonBgColor = '#ffffff',
-  gradientFromColor = '#facc15',
-  gradientToColor = '#d97706',
+  gradientFromColor = '#E5832A',
+  gradientToColor = '#800000',
   titulo,
   descripcion,
 }: CarouselContainerProps) {

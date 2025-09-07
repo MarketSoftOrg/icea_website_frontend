@@ -1,4 +1,4 @@
-import { getSampleProducts, getSucursalBySlug } from '@/lib/data';
+import { getSucursalBySlug } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { SucursalPageWrapper } from '../components/SucursalPageWrapper';
@@ -32,7 +32,11 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
 
   const carousel = sucursal.carousel;
 
-  const sampleProducts = await getSampleProducts();
+  const logoData = {
+    src: sucursal.card.imageUrlColor,
+    alt: `Logo de la sucursal ${sucursal.nombre}`,
+    text: sucursal.nombre,
+  };
 
   return (
     <SucursalPageWrapper sucursal={sucursal}>
@@ -40,8 +44,6 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
         images={images}
         buttonText="Nuestros Productos"
         buttonHref="/productos"
-        gradientFromColor={carousel.gradientFromColor}
-        gradientToColor={carousel.gradientToColor}
         buttonBgColor={carousel.buttonBgColor}
         buttonTextColor={carousel.buttonTextColor}
         titulo={carousel.titulo}
@@ -56,7 +58,7 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
         secondLogoText={sucursal.descSecondLogotext}
         horario={sucursal.horario}
       />
-      <MainProductsContainer products={sampleProducts} />
+      <MainProductsContainer logoData={logoData} />
     </SucursalPageWrapper>
   );
 }

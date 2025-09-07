@@ -30,7 +30,6 @@ export interface Sucursal {
   navbar: {
     bgColor: string;
     hoverColor: string;
-    textColor: string;
   };
   footer: {
     bgColor: string;
@@ -40,8 +39,6 @@ export interface Sucursal {
   };
   cloudinaryFolder: string;
   carousel: {
-    gradientFromColor: string;
-    gradientToColor: string;
     buttonBgColor: string;
     buttonTextColor: string;
     titulo?: string;
@@ -78,7 +75,6 @@ const sucursalesData: Sucursal[] = [
     navbar: {
       bgColor: '#292929',
       hoverColor: '#df0000',
-      textColor: '#F8D8B5',
     },
     footer: {
       bgColor: '#292929',
@@ -94,8 +90,6 @@ const sucursalesData: Sucursal[] = [
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
     carousel: {
-      gradientFromColor: '#E5832A',
-      gradientToColor: '#800000',
       buttonBgColor: '#FDF6E3',
       buttonTextColor: '#800000',
       titulo: 'Carnes de Calidad Premium Desde 1952',
@@ -131,7 +125,6 @@ const sucursalesData: Sucursal[] = [
     navbar: {
       bgColor: '#292929',
       hoverColor: '#df0000',
-      textColor: '#F8D8B5',
     },
     footer: {
       bgColor: '#292929',
@@ -147,8 +140,6 @@ const sucursalesData: Sucursal[] = [
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
     carousel: {
-      gradientFromColor: '#E5832A',
-      gradientToColor: '#800000',
       buttonBgColor: '#FDF6E3',
       buttonTextColor: '#800000',
       titulo: 'Carnes de Calidad Premium Desde 1952',
@@ -184,7 +175,6 @@ const sucursalesData: Sucursal[] = [
     navbar: {
       bgColor: '#292929',
       hoverColor: '#df0000',
-      textColor: '#F8D8B5',
     },
     footer: {
       bgColor: '#292929',
@@ -200,8 +190,6 @@ const sucursalesData: Sucursal[] = [
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
     carousel: {
-      gradientFromColor: '#E5832A',
-      gradientToColor: '#800000',
       buttonBgColor: '#FDF6E3',
       buttonTextColor: '#800000',
       titulo: 'Carnes de Calidad Premium Desde 1952',
@@ -236,7 +224,6 @@ const sucursalesData: Sucursal[] = [
     navbar: {
       bgColor: '#292929',
       hoverColor: '#617C08',
-      textColor: '#F8D8B5',
     },
     footer: {
       bgColor: '#292929',
@@ -252,10 +239,8 @@ const sucursalesData: Sucursal[] = [
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
     carousel: {
-      gradientFromColor: '#617C08',
-      gradientToColor: '#E5832A',
-      buttonBgColor: '#F3EAD3',
-      buttonTextColor: '#3B4A05',
+      buttonBgColor: '#FDF6E3',
+      buttonTextColor: '#617C08',
       titulo: 'Carnes de Calidad Premium Desde 1952',
       descripcion:
         'Carnicería familiar que ofrece los mejores cortes de res, cerdo, cordero y aves. De origen local, preparados por expertos y entregados frescos diariamente.',
@@ -289,7 +274,6 @@ const sucursalesData: Sucursal[] = [
     navbar: {
       bgColor: '#292929',
       hoverColor: '#F9943B',
-      textColor: '#F8D8B5',
     },
     footer: {
       bgColor: '#292929',
@@ -305,10 +289,8 @@ const sucursalesData: Sucursal[] = [
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
     carousel: {
-      gradientFromColor: '#FFB347',
-      gradientToColor: '#E5832A',
-      buttonBgColor: '#FDF6E3',
-      buttonTextColor: '#4E342A',
+      buttonBgColor: '#1C1C1C',
+      buttonTextColor: '#F9943B',
       titulo: 'Carnes de Calidad Premium Desde 1952',
       descripcion:
         'Carnicería familiar que ofrece los mejores cortes de res, cerdo, cordero y aves. De origen local, preparados por expertos y entregados frescos diariamente.',
@@ -341,8 +323,7 @@ const sucursalesData: Sucursal[] = [
     },
     navbar: {
       bgColor: '#292929',
-      hoverColor: '#547D02',
-      textColor: '#F9E473',
+      hoverColor: '#F9E473',
     },
     footer: {
       bgColor: '#292929',
@@ -358,8 +339,6 @@ const sucursalesData: Sucursal[] = [
     descSecondLogo: 'Users',
     descSecondLogotext: 'Tres Generaciones',
     carousel: {
-      gradientFromColor: '#F9E473',
-      gradientToColor: '#E5832A',
       buttonBgColor: '#1C1C1C',
       buttonTextColor: '#F9E473',
       titulo: 'Carnes de Calidad Premium Desde 1952',
@@ -426,49 +405,36 @@ const sampleProducts = [
     title: 'Manzanas Rojas Premium',
     description: 'Manzanas frescas y jugosas, perfectas para tu desayuno diario',
     category: 'Frutas',
-    price: 4.99,
-    unit: 'kg',
-    oldPrice: 6.99,
-    imageUrl: '/images/manzanas.jpg',
-    promoLabel: '30% OFF',
+    cloudinaryUrl: 'manzanas_rojas_premium',
   },
   {
     id: '2',
     title: 'Leche Entera Orgánica',
     description: 'Leche 100% natural de vacas alimentadas con pasto orgánico',
     category: 'Lácteos',
-    price: 3.5,
-    unit: 'litro',
-    imageUrl: '/images/leche.jpg',
+    cloudinaryUrl: 'leche_entera_organica',
   },
   {
     id: '3',
     title: 'Pan Artesanal Integral',
     description: 'Pan recién horneado con ingredientes naturales y semillas',
     category: 'Panadería',
-    price: 2.75,
-    unit: 'unidad',
-    oldPrice: 3.25,
-    imageUrl: '/images/pan.jpg',
-    promoLabel: 'NUEVO',
+    cloudinaryUrl: 'pan_artesanal_integral',
   },
   {
     id: '4',
     title: 'Tomates Cherry Orgánicos',
     description: 'Tomates cherry dulces y frescos, cultivados sin pesticidas',
     category: 'Verduras',
-    price: 5.2,
-    unit: 'bandeja',
-    imageUrl: '/images/tomates.jpg',
+    cloudinaryUrl: 'tomate_cherry_organicos',
   },
   {
     id: '5',
     title: 'Yogurt Griego Natural',
     description: 'Yogurt cremoso alto en proteínas, sin azúcares añadidos',
     category: 'Lácteos',
-    price: 4.1,
-    unit: 'envase',
-    imageUrl: '/images/yogurt.jpg',
+    cloudinaryUrl: 'yogurt_griego_natural',
+    imageUrl: 'yogur_griego_natural',
   },
 ];
 

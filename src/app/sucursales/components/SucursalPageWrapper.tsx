@@ -58,7 +58,6 @@ export function SucursalPageWrapper({ sucursal, children }: SucursalPageWrapperP
         navLinks={navLinks}
         bgColor={sucursal.navbar.bgColor}
         hoverColor={sucursal.navbar.hoverColor}
-        textColor={sucursal.navbar.textColor}
         logoHref={`/sucursales/${sucursal.slug}`}
         hasIceaNavLink={true}
       />
