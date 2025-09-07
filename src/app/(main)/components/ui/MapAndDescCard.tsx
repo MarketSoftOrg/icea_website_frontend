@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { LucideIcon, Award, Users } from 'lucide-react';
-import { Clock } from 'lucide-react';
 
 type Props = {
   imageSrc: string;
@@ -68,14 +67,6 @@ export default function MapAndDesc({ imageSrc, description, sucursalId, firstLog
                 <p className="text-sm font-bold">{secondLogoText}</p>
               </div>
             </div>
-          </div>
-
-          {/* Horario (siempre alineado abajo) */}
-          <div className="flex items-center text-lg text-neutral-700 mt-10">
-            <Clock className="h-5 w-5 text-orange-500 mr-2" />
-            <span>
-              <span className="font-semibold text-orange-500">Horario:</span> {horario}
-            </span>
           </div>
         </div>
 
