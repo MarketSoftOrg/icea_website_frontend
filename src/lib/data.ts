@@ -12,6 +12,7 @@ export interface Sucursal {
   descFirstLogotext: string;
   descSecondLogo: string;
   descSecondLogotext: string;
+  whyworkwithus: string;
   social: {
     facebookUrl: string;
     whatsappUrl: string;
@@ -57,8 +58,10 @@ const sucursalesData: Sucursal[] = [
     horario: 'Lunes a Sábado de 10am a 8pm',
     descripcion:
       '¡El Origen de los buenos momentos! Fusionamos la tradición carnicera que nos heredaron nuestras familias con el concepto mini-super, ofreciendo una experiencia única, moderna y de gran calidad.',
+    whyworkwithus:
+      'Si buscas un lugar donde tu trabajo tenga impacto y seas parte de algo más grande, El Origen ideal para que continúes tu vida laboral. ',
     social: {
-      facebookUrl: 'https://www.facebook.com/',
+      facebookUrl: 'https://www.facebook.com/ElOrigenValdepenas',
       whatsappUrl: 'https://wa.me',
     },
     card: {
@@ -110,8 +113,10 @@ const sucursalesData: Sucursal[] = [
     horario: 'Lunes a Sábado de 10am a 8pm',
     descripcion:
       '¡El Origen de los buenos momentos! Fusionamos la tradición carnicera que nos heredaron nuestras familias con el concepto mini-super, ofreciendo una experiencia única, moderna y de gran calidad.',
+    whyworkwithus:
+      'Si buscas un lugar donde tu trabajo tenga impacto y seas parte de algo más grande, El Origen ideal para que continúes tu vida laboral. ',
     social: {
-      facebookUrl: 'https://www.facebook.com/',
+      facebookUrl: 'https://www.facebook.com/ElOrigenBaseAerea',
       whatsappUrl: 'https://wa.me',
     },
     card: {
@@ -163,8 +168,10 @@ const sucursalesData: Sucursal[] = [
     horario: 'Lunes a Sábado de 10am a 8pm',
     descripcion:
       '¡El Origen de los buenos momentos! Fusionamos la tradición carnicera que nos heredaron nuestras familias con el concepto mini-super, ofreciendo una experiencia única, moderna y de gran calidad.',
+    whyworkwithus:
+      'Si buscas un lugar donde tu trabajo tenga impacto y seas parte de algo más grande, El Origen ideal para que continúes tu vida laboral.',
     social: {
-      facebookUrl: 'https://www.facebook.com/',
+      facebookUrl: 'https://www.facebook.com/ElOrigenRioNilo',
       whatsappUrl: 'https://wa.me',
     },
     card: {
@@ -216,8 +223,10 @@ const sucursalesData: Sucursal[] = [
     horario: 'Lunes a Viernes de 9am a 7pm',
     descripcion:
       '¡Desde el campo hasta tu mesa! Nos especializamos en ofrecer productos cárnicos frescos, cuidadosamente seleccionados. Nuestro objetivo es entregarte calidad cuidando tu economía familiar. ',
+    whyworkwithus:
+      'Un ambiente familiar en donde priorizamos el crecimiento conjunto y el desarrollo personal. El buen servicio nos caracteriza, por eso buscamos colaboradores con una excelente actitud.',
     social: {
-      facebookUrl: 'https://www.facebook.com/',
+      facebookUrl: 'https://www.facebook.com/DelCampoCarnes',
       whatsappUrl: 'https://wa.me',
     },
     card: {
@@ -267,8 +276,10 @@ const sucursalesData: Sucursal[] = [
     horario: 'Lunes a Viernes de 9am a 7pm',
     descripcion:
       ' ¡Pura calidad Tonalteca! 8 años siendo orgullosamente la carnicería de confianza de cientos de familias. ',
+    whyworkwithus:
+      'Valoramos el trabajo en equipo, la formación constante y el bienestar de nuestros empleados. ¡Únete a nuestro equipo y forma parte de una empresa que marca la diferencia!',
     social: {
-      facebookUrl: 'https://www.facebook.com/',
+      facebookUrl: 'https://www.facebook.com/CarniceriaTonala',
       whatsappUrl: 'https://wa.me',
     },
     card: {
@@ -319,8 +330,10 @@ const sucursalesData: Sucursal[] = [
     horario: 'Lunes a Viernes de 9am a 7pm',
     descripcion:
       '¡Más que una carnicería! Un espacio práctico donde podrás encontrar los mejores cortes, y una gran diversidad productos seleccionados para tu despensa.  Un negocio familiar, construido para las familias. ',
+    whyworkwithus:
+      'Somos reconocidos por nuestra excelencia en calidad y servicio, y buscamos colaboradores comprometidos que quieran desarrollarse en una empresa sólida.',
     social: {
-      facebookUrl: 'https://www.facebook.com/',
+      facebookUrl: 'https://www.facebook.com/CarnesNormandia',
       whatsappUrl: 'https://wa.me',
     },
     card: {
@@ -387,18 +400,13 @@ const valuesicea = [
   },
 ];
 
-const companies = [
-  'Carnes Normandía',
-  'Distribuidora ICEA',
-  'Alimentos Frescos del Pacífico',
-  'Servicios Alimentarios Integrales',
-];
+const companies = ['Carnicería El Origen', 'Carnicería Tonalá', 'Carnicería Del Campo', 'Carnes Normandia'];
 
 const iceastats = [
-  { number: '25+', label: 'Años de Experiencia' },
-  { number: '50+', label: 'Empleados' },
-  { number: '10+', label: 'Ciudades' },
-  { number: '1000+', label: 'Clientes Satisfechos' },
+  { number: '8', label: 'Años de Experiencia' },
+  { number: '500', label: 'Empleados' },
+  { number: '6', label: 'Sucursales' },
+  { number: '+ 10,000', label: 'Clientes Satisfechos' },
 ];
 
 const iceaCompanyInfo = {

@@ -1,4 +1,3 @@
-// ProductCard.tsx
 import Image from 'next/image';
 
 interface ProductCardProps {
@@ -7,8 +6,8 @@ interface ProductCardProps {
 
 export default function ProductCard({ imageData }: ProductCardProps) {
   return (
-    <div className="group bg-white border border-gray-200 rounded-xl shadow-smoverflow-hidden flex flex-col w-full max-w-xs mx-auto transition-all duration-300">
-      <div className="relative aspect-[4/4] overflow-hidden">
+    <div className="group bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden flex flex-col w-full max-w-xs mx-auto transition-all duration-300">
+      <div className="relative aspect-[4/4] overflow-hidden rounded-xl">
         <Image
           src={imageData.src}
           alt={imageData.alt}

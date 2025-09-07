@@ -1,7 +1,7 @@
 import { getSucursalBySlug } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import { SucursalPageWrapper } from '../../components/SucursalPageWrapper';
-import { Briefcase, GraduationCap, Medal, Users, Wallet } from 'lucide-react';
+import { Briefcase, DollarSign, Clock, ShieldUser, FileCheck } from 'lucide-react';
 import MainPageContentContainer from '@/app/(main)/components/ui/MainPageContentContainer';
 import Image from 'next/image';
 
@@ -30,41 +30,34 @@ export default async function ContactoPage({ params }: { params: Promise<{ slug:
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               ¿Por qué trabajar en {sucursal.nombre}?
             </h2>
-            <p className="text-gray-700 mb-6 text-base md:text-lg">
-              Somos una empresa familiar con más de 70 años de experiencia en el sector cárnico. Ofrecemos un ambiente
-              de trabajo estable, oportunidades de crecimiento y beneficios competitivos.
-            </p>
+            <p className="text-gray-700 mb-6 text-base md:text-lg">{sucursal.whyworkwithus}</p>
             {/* Grid iconos */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-6">
               <div className="flex items-start gap-3">
-                <Users className="text-orange-600 w-6 h-6 mt-1" />
+                <DollarSign className="text-orange-600 w-6 h-6" />
                 <div>
-                  <p className="font-semibold text-gray-900">Ambiente Familiar</p>
-                  <p className="text-gray-600 text-sm">Equipo unido y colaborativo</p>
+                  <p className="font-semibold text-gray-900">Salarios competitivos</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <GraduationCap className="text-orange-600 w-6 h-6 mt-1" />
+                <Clock className="text-orange-600 w-6 h-6" />
                 <div>
-                  <p className="font-semibold text-gray-900">Capacitación</p>
-                  <p className="text-gray-600 text-sm">Desarrollo profesional continuo</p>
+                  <p className="font-semibold text-gray-900">Ambos turnos</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Medal className="text-orange-600 w-6 h-6 mt-1" />
+                <ShieldUser className="text-orange-600 w-6 h-6" />
                 <div>
-                  <p className="font-semibold text-gray-900">Reconocimiento</p>
-                  <p className="text-gray-600 text-sm">Valoramos tu esfuerzo</p>
+                  <p className="font-semibold text-gray-900">Estabilidad laboral</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Wallet className="text-orange-600 w-6 h-6 mt-1" />
+                <FileCheck className="text-orange-600 w-6 h-6" />
                 <div>
-                  <p className="font-semibold text-gray-900">Beneficios</p>
-                  <p className="text-gray-600 text-sm">Paquete competitivo</p>
+                  <p className="font-semibold text-gray-900">Prestaciones de ley</p>
                 </div>
               </div>
             </div>

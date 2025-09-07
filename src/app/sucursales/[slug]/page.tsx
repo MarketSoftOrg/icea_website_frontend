@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { SucursalPageWrapper } from '../components/SucursalPageWrapper';
 import { getImagesFromFolder } from '@/lib/cloudinary';
 import MapAndDesc from '@/app/(main)/components/ui/MapAndDescCard';
+import Servicios from '../components/ui/Servicios';
 import CarouselContainer from '../components/ui/CarouselContainer';
 import MainProductsContainer from '@/app/(main)/components/ui/MainProductsContainer';
 
@@ -57,6 +58,7 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
           sucursalWhatsappUrl={sucursal.social.whatsappUrl}
         />
       </section>
+      <Servicios />
     </SucursalPageWrapper>
   );
 }
