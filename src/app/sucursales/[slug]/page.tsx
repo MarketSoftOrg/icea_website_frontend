@@ -44,6 +44,12 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
         titulo={carousel.titulo}
         descripcion={carousel.descripcion}
       />
+      <section id="nuestros-productos">
+        <MainProductsContainer
+          sucursalProductsFolder={sucursal.cloudinaryProductsFolder}
+          sucursalWhatsappUrl={sucursal.social.whatsappUrl}
+        />
+      </section>
       <MapAndDesc
         imageSrc={sucursal.fachada}
         description={sucursal.descripcion}
@@ -52,12 +58,6 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
         secondLogoText={sucursal.descSecondLogotext}
       />
       <VisitaNuestraTienda />
-      <section id="nuestros-productos">
-        <MainProductsContainer
-          sucursalProductsFolder={sucursal.cloudinaryProductsFolder}
-          sucursalWhatsappUrl={sucursal.social.whatsappUrl}
-        />
-      </section>
       <Servicios />
     </SucursalPageWrapper>
   );
