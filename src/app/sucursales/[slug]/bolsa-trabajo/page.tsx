@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import { SucursalPageWrapper } from '../../components/SucursalPageWrapper';
 import { Briefcase, DollarSign, Clock, ShieldUser, FileCheck } from 'lucide-react';
 import MainPageContentContainer from '@/app/(main)/components/ui/MainPageContentContainer';
+import JobCard from '@/app/(main)/components/ui/JobCard';
+import NoJobResultCard from '@/app/(main)/components/ui/NoJobResultCard';
 import Image from 'next/image';
 
 export default async function ContactoPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -15,7 +17,7 @@ export default async function ContactoPage({ params }: { params: Promise<{ slug:
 
   return (
     <SucursalPageWrapper sucursal={sucursal}>
-      <div className="bg-[#FFFBEB] p-6 flex items-center gap-4 rounded-4xl shadow-2xs w-full sm:w-11/12 md:w-11/12 lg:w-10/12 2xl:w-3/4 justify-center mx-auto mb-6">
+      <div className="bg-[#FFFBEB] m-5 p-6 flex items-center gap-4 rounded-4xl shadow-2xs w-full sm:w-11/12 md:w-11/12 lg:w-10/12 2xl:w-3/4 justify-center mx-auto mb-6">
         <div className="bg-yellow-100 rounded-full p-3 flex items-center justify-center">
           <Briefcase className="text-orange-600 w-6 h-6" />
         </div>
@@ -72,6 +74,24 @@ export default async function ContactoPage({ params }: { params: Promise<{ slug:
             />
           </div>
         </div>
+      </MainPageContentContainer>
+      <MainPageContentContainer>
+        <JobCard
+          title="Supervisor de Calidad"
+          description="Responsable de supervisar los procesos de calidad..."
+          location="Guadalajara, Jalisco"
+          schedule="Tiempo Completo"
+          salaryMin={18000}
+          salaryMax={25000}
+          experience="3+ años"
+          publishedDate="2024-07-01"
+          category="Control de Calidad"
+          requirements={['Licenciatura en Alimentos o afín', '...']}
+          link={`/sucursales/${sucursal.slug}/job-application`}
+        />
+      </MainPageContentContainer>
+      <MainPageContentContainer>
+        <NoJobResultCard></NoJobResultCard>
       </MainPageContentContainer>
     </SucursalPageWrapper>
   );
