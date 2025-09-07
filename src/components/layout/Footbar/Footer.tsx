@@ -6,14 +6,14 @@ export const Footer = ({
   companyDescription,
   linkColumns,
   socialLinks,
-  bgColor,
-  textColor,
-  linkColor,
-  linkHoverColor,
+  bgColor = '#111827', // gray-900
+  textColor = '#ffffff',
+  linkColor = '#9ca3af', // gray-400
+  linkHoverColor = '#ffffff',
 }: FooterProps) => {
   return (
     <footer
-      className="w-full border-t border-[var(--color-footer-border)]"
+      className="text-white py-6"
       style={
         {
           '--footer-background': bgColor,
@@ -24,51 +24,76 @@ export const Footer = ({
         } as React.CSSProperties
       }
     >
-      <div className="mx-auto w-full sm:w-11/12 md:w-11/12 lg:w-10/12 2xl:w-3/4 px-4 py-12 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap justify-center sm:gap-10 lg:gap-50 text-center sm:text-left">
-          <div className="sm:max-w-xs md:max-w-lg">
-            <h2 className="text-xl font-bold text-[var(--footer-text)]">{companyName}</h2>
-            <p className="mt-4 opacity-90 text-[var(--footer-text)]">{companyDescription}</p>
-            <div className="mt-8 flex justify-center gap-4 sm:justify-start mb-10 sm:mb-0">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--footer-link)] hover:text-[var(--footer-link-hover)] transition-colors"
-                >
-                  {social.icon}
-                  <span className="sr-only">{social.href}</span>
-                </a>
-              ))}
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="grid md:grid-cols-4 gap-6 mb-6">
+          <div className="md:col-span-2">
+            <div className="mb-3">
+              <span className="text-lg font-semibold text-[var(--footer-text)]">{companyName}</span>
+            </div>
+            <p className="text-[var(--footer-link)] mb-3 text-sm leading-relaxed">{companyDescription}</p>
+            {socialLinks && socialLinks.length > 0 && (
+              <div className="flex items-center space-x-4">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[var(--footer-link)] hover:text-[var(--footer-link-hover)] transition-colors"
+                    aria-label={`Seguir en ${social.href}`}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+          {linkColumns &&
+            linkColumns.map((column, columnIndex) => (
+              <div key={column.title || columnIndex}>
+                <h3 className="text-lg font-semibold mb-3 text-[var(--footer-text)]">{column.title}</h3>
+                <ul className="space-y-2">
+                  {column.links &&
+                    column.links.map((link, linkIndex) => (
+                      <li key={link.label || linkIndex}>
+                        {link.href ? (
+                          <Link
+                            href={link.href}
+                            className="text-[var(--footer-link)] hover:text-[var(--footer-link-hover)] transition-colors text-sm"
+                          >
+                            {link.label}
+                          </Link>
+                        ) : (
+                          <span className="text-[var(--footer-link)] text-sm">{link.label}</span>
+                        )}
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            ))}
+        </div>
+        <div className="border-t border-gray-600 pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-center md:text-left mb-4 md:mb-0">
+              <p className="text-[var(--footer-link)] text-sm">
+                © {new Date().getFullYear()} {companyName}. Todos los derechos reservados.
+              </p>
+            </div>
+            <div className="flex space-x-6">
+              <Link
+                href="/privacy"
+                className="text-[var(--footer-link)] hover:text-[var(--footer-link-hover)] transition-colors text-sm"
+              >
+                Política de Privacidad
+              </Link>
+              <Link
+                href="/terms"
+                className="text-[var(--footer-link)] hover:text-[var(--footer-link-hover)] transition-colors text-sm"
+              >
+                Términos y Condiciones
+              </Link>
             </div>
           </div>
-
-          {linkColumns.map((column) => (
-            <div key={column.title}>
-              <p className="font-medium text-[var(--footer-text)]">{column.title}</p>
-              <ul className="mt-6 space-y-4 text-sm ">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-[var(--footer-link)] hover:text-[var(--footer-link-hover)] transition-colors mr-2"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 border-t border-[var(--color-footer-border)] pt-8">
-          <p className="text-center text-sm opacity-80 text-[var(--footer-text)]">
-            {' '}
-            `© ${new Date().getFullYear()} Todos los derechos reservados.`
-          </p>
         </div>
       </div>
     </footer>
