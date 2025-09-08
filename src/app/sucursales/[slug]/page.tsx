@@ -57,7 +57,7 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
         firstLogoText={sucursal.descFirstLogotext}
         secondLogoText={sucursal.descSecondLogotext}
       />
-      <VisitaNuestraTienda />
+      <VisitaNuestraTienda contactData={sucursal.contactData} />
       <Servicios />
     </SucursalPageWrapper>
   );
