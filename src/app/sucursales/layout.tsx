@@ -1,7 +1,7 @@
 import { getSucursalBySlug } from '@/lib/data';
 import type { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const sucursal = getSucursalBySlug(params.slug);
   const nombre = sucursal ? `Sucursal ${sucursal.nombre}` : 'Nuestras Sucursales';
 
@@ -11,6 +11,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function SucursalesLayout({ children }: { children: React.ReactNode; params: { slug: string } }) {
+export default function SucursalesLayout({ children }: { children: React.ReactNode }) {
   return <div className="bg-gray-100 min-h-screen flex flex-col">{children}</div>;
 }
