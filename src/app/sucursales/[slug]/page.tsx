@@ -5,6 +5,7 @@ import { SucursalPageWrapper } from '../components/SucursalPageWrapper';
 import { getImagesFromFolder } from '@/lib/cloudinary';
 import MapAndDesc from '@/app/(main)/components/ui/MapAndDescCard';
 import Servicios from '../components/ui/Servicios';
+import VisitaNuestraTienda from '../components/ui/VisitaNuestraTienda';
 import CarouselContainer from '../components/ui/CarouselContainer';
 import MainProductsContainer from '@/app/(main)/components/ui/MainProductsContainer';
 
@@ -43,21 +44,20 @@ export default async function SucursalPage({ params }: { params: Promise<{ slug:
         titulo={carousel.titulo}
         descripcion={carousel.descripcion}
       />
-      <MapAndDesc
-        imageSrc={sucursal.fachada}
-        description={sucursal.descripcion}
-        mapEmbedUrl={sucursal.map}
-        sucursalId={sucursal.id}
-        firstLogoText={sucursal.descFirstLogotext}
-        secondLogoText={sucursal.descSecondLogotext}
-        horario={sucursal.horario}
-      />
       <section id="nuestros-productos">
         <MainProductsContainer
           sucursalProductsFolder={sucursal.cloudinaryProductsFolder}
           sucursalWhatsappUrl={sucursal.social.whatsappUrl}
         />
       </section>
+      <MapAndDesc
+        imageSrc={sucursal.fachada}
+        description={sucursal.descripcion}
+        sucursalId={sucursal.id}
+        firstLogoText={sucursal.descFirstLogotext}
+        secondLogoText={sucursal.descSecondLogotext}
+      />
+      <VisitaNuestraTienda contactData={sucursal.contactData} />
       <Servicios />
     </SucursalPageWrapper>
   );

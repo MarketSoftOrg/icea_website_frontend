@@ -1,26 +1,16 @@
 import Image from 'next/image';
 import { LucideIcon, Award, Users } from 'lucide-react';
-import { Clock } from 'lucide-react';
 
 type Props = {
   imageSrc: string;
   description: React.ReactNode;
-  mapEmbedUrl: string;
   sucursalId: number;
   firstLogoText: string;
   secondLogoText: string;
   horario?: string;
 };
 
-export default function MapAndDesc({
-  imageSrc,
-  description,
-  mapEmbedUrl,
-  sucursalId,
-  firstLogoText,
-  secondLogoText,
-  horario,
-}: Props) {
+export default function MapAndDesc({ imageSrc, description, sucursalId, firstLogoText, secondLogoText }: Props) {
   let icon1: LucideIcon;
   let icon2: LucideIcon;
   icon1 = Award;
@@ -59,7 +49,7 @@ export default function MapAndDesc({
   const Icon1 = icon1;
   const Icon2 = icon2;
   return (
-    <section className="bg-[#FFF8E7] px-6 py-12">
+    <section className="bg-[#FFFFFF] px-6 py-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 items-start md:items-center md:justify-between">
         {/* Texto y descripción */}
         <div className="flex-1 w-full max-w-xl flex flex-col justify-between">
@@ -78,29 +68,12 @@ export default function MapAndDesc({
               </div>
             </div>
           </div>
-
-          {/* Horario (siempre alineado abajo) */}
-          <div className="flex items-center text-lg text-neutral-700 mt-10">
-            <Clock className="h-5 w-5 text-orange-500 mr-2" />
-            <span>
-              <span className="font-semibold text-orange-500">Horario:</span> {horario}
-            </span>
-          </div>
         </div>
 
         {/* Imagen y mapa */}
         <div className="flex flex-col gap-4 flex-1">
           <div className="rounded-xl overflow-hidden shadow-md">
             <Image src={imageSrc} alt="Carnicería" width={640} height={360} className="object-cover w-full h-auto" />
-          </div>
-          <div className="rounded-xl overflow-hidden shadow-md">
-            <iframe
-              src={mapEmbedUrl}
-              className="w-full h-[150px] sm:h-[200px] md:h-[250px] lg:h-[300px] border-0 rounded-xl"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
           </div>
         </div>
       </div>
